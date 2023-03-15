@@ -11,14 +11,15 @@
         <div class="container">
 
             <header>Registration</header>
-     <form action="#">
+     <!-- <form> -->
+        <form   >
         <div class="form first">
             <div class="details personal">
                <span class="title">personal Details</span> 
             <div class="fields">
                 <div class="input-field">
                     <label>Full Name</label>
-                    <input type="text" placeholder="Enter your name" required>
+                    <input type="text"id="username" pattern="[A-Za-z]{2,32}" placeholder="Enter your name" required="true">
                 </div>
 
                 <div class="input-field">
@@ -28,18 +29,18 @@
 
                 <div class="input-field">
                     <label>Email</label>
-                    <input type="text" placeholder="Enter your email" required>
+                    <input type="email"id="emailid" placeholder="Enter your email" required>
                 </div>
 
                 
                     <div class="input-field">
                         <label>Mobile Number</label>
-                        <input type="number" placeholder="Enter moile number" required>
+                        <input type="tel"id="phnum" title="Enter only numbers" pattern="[0-9]{10}" placeholder="Enter mobile number" required>
                     </div>
 
                     <div class="input-field">
                         <label>Gender</label>
-                        <input type="text" placeholder="Enter your gender" required>
+                        <input type="text"id="gendermf" placeholder="Enter your gender" required>
                     </div>
 
                     <div class="yesorno">
@@ -60,7 +61,7 @@
                     </div>
             </div>
             </div>
-             <!--COPYING-->
+             <!--same div -->
             <div class="details ID">
                 <span class="title">Main Details</span> 
              <div class="fields">
@@ -111,16 +112,38 @@
 
 
 
-             <button class="submitbtn">
-                <a href="bloodcamp.html"span class="btntext">Submit</span></a>
-                <i class="uil uil-navigator"></i>
+             <button  type="submit" class="submitbtn" >
+                Submit
+                <!-- <i class="uil uil-navigator"></i> -->
              </button>
+            </form>
              </div>
         </div>
-     </form>       
+     <!-- </form>        -->
 
 
         </div>
+
         
     </body>
+    <script>
+        let form =  document.querySelector("form")
+        form.addEventListener("submit",submit)
+        function submit(e) {
+            e.preventDefault()
+          const username = document.getElementById("username").value;
+          const emailid = document.getElementById("emailid").value;
+          const phnum = document.getElementById("phnum").value;
+          const gendermf = document.getElementById("gendermf").value;
+        
+          localStorage.setItem("name", JSON.stringify(username));
+          localStorage.setItem("email", emailid);
+          localStorage.setItem("number", phnum);
+          localStorage.setItem("gender", gendermf);
+          localStorage.setItem("summa","sndjc")
+
+          window.location.href = "profile2.html";
+    
+        }
+      </script>
 </html>

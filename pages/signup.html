@@ -11,15 +11,34 @@
         <img src="../assets/img/signinlogo.png" alt="userimg">
         <h1>Sign up Now</h1>
         <form>
-            <input type="email" class="input-box" placeholder="your Email">
-            <input type="email" class="input-box" placeholder="your Password">
-            <input type="email" class="input-box" placeholder="Confirm Password">
+            <input type="text" class="input-box" placeholder="your Email" id="email">
+            <input type="password" class="input-box" placeholder="your Password" id="pass_1">
+            <input type="password" class="input-box" placeholder="Confirm Password" id ="pass_2">
             <p><span><input type="checkbox"></span> I agree to the terms of services</p>
-            <a href="../index.html" class="sign-button">Sign up</a>
+            <button onclick="getData()">sign up</button>
             <hr>
             <p class="or">OR</p>
           <p>Do you have an account?<a href="login.html">sign in</a></p>
         </form>
        </div>
+       <script>
+function getData(){
+
+const email = document.getElementById("email").value
+const password = document.getElementById("pass_1").value
+const password_2 = document.getElementById("pass_2").value
+
+const user ={
+    user_email : email,
+    user_password : password,
+    user_confirm_password : password_2,
+}
+const sri = localStorage.getItem("sri")
+?JSON.parse(localStorage.getItem("sri")):
+[];
+sri.push(user)
+localStorage.setItem("sri",JSON.stringify(sri))
+}
+       </script>
     </body>
 </html>

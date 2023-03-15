@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DONOR</title>
+    <link rel="stylesheet" href="../assets/css/profile2.css">
+    <link rel="stylesheet" href="../assets/css/profile2.css">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  </head>
+  <body>
+     <!--navbar-->
+     <header>
+     <nav>
+        <div class="nav1"><img src="../assets/img/Donor_logo.png" alt="logo" />
+        <ul class="nav-links">
+          <li class="active"><a href="/assets/css/profile2.css">Home</a></li>
+          <li><a href="#">Blood Availability</a></li>
+          <li><a href="pages/donor_availability.html">Donor Availability</a></li>
+          <li><a href="pages/registration.html">Register</a></li>
+          <li><a href="pages/profile.html">Profile</a></li>
+      </div>
+        <div class="login_signup">
+          <button>Signup</button>
+          <button>Login</button>
+        </div>
+      </nav>
+    </header>
+    <div class="cont1">
+        <div class="cont1_left">
+            <img src="../assets/img/doantion img2.jpg" alt="img">
+            <p>kingston</p>
+        </div>
+        <div class="cont_2main">
+
+            <div class="cont_2right">
+                <h2>Profile page</h2>
+          
+            <div class="input-field">
+                <label>First Name</label>
+                <input type="text"id="profilename" >
+            </div>
+                       
+            <div class="input-field">
+                <label>Last Name</label>
+                <input type="text"id="" >
+            </div>
+
+            <div class="input-field">
+                <label>Email</label>
+                <input type="text"id="emailid" >
+            </div>
+
+            <div class="input-field">
+                <label>Phone number</label>
+                <input type="text"id="number" >
+            </div>
+        </div>
+            <div class="bio">
+                <p>Bio</p>
+                <textarea name="kingston" id="" cols="30" rows="10"></textarea>
+            </div>
+            <a href="pages/signup.html">edit</a>
+            <a href="pages/signup.html"></a>
+            <button id="save">save</button>
+         
+          </div>
+    </div>
+    
+       <script>
+        profile()
+        function profile(){
+      const full_name = localStorage.getItem("name");
+      console.log(full_name);
+
+      const email = localStorage.getItem("email");
+      console.log(email);
+
+      const number = localStorage.getItem("number")
+      console.log(number);
+
+      const gender = localStorage.getItem("gender")
+      console.log(number);
+
+      document.getElementById("profilename").value = full_name;
+      document.getElementById("emailid").value = email;
+      document.getElementById("number").value = number;
+      }
+    
+      let save_button =document.querySelector("#save")
+      save_button.addEventListener("click",save)
+      function save(e){
+        e.preventDefault()
+        let new_name = document.getElementById("profilename").value
+        let new_email = document.getElementById("emailid").value
+        let new_ph_no = document.getElementById("number").value
+
+          localStorage.setItem("name", new_name);
+          localStorage.setItem("email", new_email);
+          localStorage.setItem("number", new_ph_no);
+
+      }
+    </script>
+  </body>

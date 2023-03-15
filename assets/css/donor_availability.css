@@ -1,0 +1,102 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .section1 {
+    box-sizing: border-box;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+  }
+  .section1_right img {
+    width: 750px;
+    /* float: right; */
+  }
+  .section1_left {
+    width: 650px;
+    padding: 40px;
+  }
+  .section1_left p {
+    text-indent: 50px;
+    font-size: 17px;
+  }
+  .section1_left h2 {
+    font-size: 40px;
+    color: #2b3539;
+    margin-bottom: 20px;
+  }
+  
+  .blood-form {
+    text-align: center;
+    border-radius: 5px;
+    /* padding: 30px;
+      margin: 250px auto 100px auto; */
+  }
+  
+  .blood-form a {
+    background: #ff6a39;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 40px auto;
+  }
+  
+  form select {
+    width: 300px;
+    height: 40px;
+    padding: 3px 8px;
+  }
+  
+  /* input[type="submit"] :hover {
+      background: red;
+    } */
+  
+  .bloodh1 {
+    text-align: center;
+    color: #ff6a39;
+    font-weight: 25px;
+  }
+  
+  /*blood availability listing*/
+  
+  .list_one{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 1000px;
+    height: 300px;
+    margin: 50px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    
+  }
+  .list img{
+    width: 350px;
+    float:left;
+    margin:auto 30px;
+    
+  
+  }
+   span{
+    color: rgb(106, 101, 101);
+    font-weight: 500px;
+    
+    
+  
+  }
+  .list p{
+    font-weight: 10px;
+  }
+  .list h3{
+  font-weight: 200px;
+  }

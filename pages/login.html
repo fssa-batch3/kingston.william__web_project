@@ -12,9 +12,9 @@
       <div class="sec1">
         <img src="../assets/img/logo1.png" alt="logo" class="img"/>
           <form>
-            <input type="text" id="username"placeholder="Email address"><br>
+            <input type="text" id="username"placeholder="Email address" ><br>
             <input type="password" id="pass" placeholder="Password"><br>
-            <button id="login">Log in </button>
+            <button id="login" onclick="getData()">Log in </button>
           </form>
           <div id="or"><span class="check" >OR</span>
           </div>
@@ -25,7 +25,33 @@
       </div>
     </section>
     <section class="sec2">
-        <a href="signup.html" ld="sign"> Don't have an account?<span id="signup">Sign up</span></a> 
+        <a href="signup.html" ld="sign"> Don't have an account?<button id = "btn" >sign up</button></a> 
     </section>
+    <script>
+    function getData(){
+      const email = document.getElementById("username").value
+      const password = document.getElementById("pass").value
+
+      const king =JSON.parse(localStorage.getItem("sri"))
+
+      let check;
+       king.find(element=>{
+           if(element["user_email"]==email && element["user_password"]==password){
+            return check=1
+
+           }
+           else{
+            return check=0
+           }
+        } )
+        if(check==1){
+          alert("logged in")
+          window.location.href
+        }
+        else{
+          alert("invalid")
+        }
+      }
+    </script>
 </body>
 </html> 
