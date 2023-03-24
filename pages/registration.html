@@ -10,9 +10,9 @@
     <body>
         <div class="container">
 
-            <header>Registration</header>
+            <header>Donor Registration</header>
      <!-- <form> -->
-        <form   >
+        <form  id="signup-form" >
         <div class="form first">
             <div class="details personal">
                <span class="title">personal Details</span> 
@@ -57,7 +57,7 @@
 
                     <div class="input-field">
                         <label>Occupation</label>
-                        <input type="text" placeholder="Enter your occupation" required>
+                        <input type="text"id="occup" placeholder="Enter your occupation" required>
                     </div>
             </div>
             </div>
@@ -67,12 +67,12 @@
              <div class="fields">
                  <div class="input-field">
                      <label>Address type</label>
-                     <input type="text" placeholder="Enter your Address" required>
+                     <input type="text" id="add" placeholder="Enter your Address" required>
                  </div>
  
                  <div class="input-field">
                      <label>Nationality</label>
-                     <input type="text" placeholder="Enter your Nationality" required>
+                     <input type="text" id="nation" placeholder="Enter your Nationality" required>
                  </div>
  
                  <div class="input-field">
@@ -83,12 +83,12 @@
                  
                      <div class="input-field">
                          <label>District</label>
-                         <input type="text" placeholder="Enter your District" required>
+                         <input type="text" id="dist" placeholder="Enter your District" required>
                      </div>
  
                      <div class="input-field">
                          <label>Blood Group</label>
-                         <input type="text" placeholder="Enter your blood group" required>
+                         <input type="text" id="blood" placeholder="Enter your blood group" required>
                      </div>
 
                      <div class="yesorno">
@@ -112,7 +112,7 @@
 
 
 
-             <button  type="submit" class="submitbtn" >
+             <button  type="submit" class="submitbtn">
                 Submit
                 <!-- <i class="uil uil-navigator"></i> -->
              </button>
@@ -135,15 +135,36 @@
           const emailid = document.getElementById("emailid").value;
           const phnum = document.getElementById("phnum").value;
           const gendermf = document.getElementById("gendermf").value;
-        
+          const occupation= document.getElementById("occup").value;
+          const address= document.getElementById("add").value;
+          const nationality = document.getElementById("nation").value;
+          const district = document.getElementById("dist").value;
+          const bloodgroup = document.getElementById("blood").value;
+
           localStorage.setItem("name", JSON.stringify(username));
           localStorage.setItem("email", emailid);
           localStorage.setItem("number", phnum);
           localStorage.setItem("gender", gendermf);
-          localStorage.setItem("summa","sndjc")
-
+        //   localStorage.setItem("summa","sndjc");
+          localStorage.setItem("occupation", occupation);
+          localStorage.setItem("address",address);
+          localStorage.setItem("nationality",nationality);
+          localStorage.setItem("district",district);
+          localStorage.setItem("bloodgroup", bloodgroup);
+         
           window.location.href = "profile2.html";
     
         }
       </script>
+      <!-- <script>
+        const form = document.getElementById("signup-form");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document,getElementById()
+        }
+
+      </script> -->
+     </body>
 </html>

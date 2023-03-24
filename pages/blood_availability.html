@@ -183,12 +183,26 @@
 
 </div> -->
 <div class="main_cont">
-  <div class="sub_cont">
-    <div class="cont_content">
+    <!-- <div class="cont_content">
       <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
       <p><span>CHENNAI HOSPITAL</span></p>
       <p>Hospital Name: Gem</p>
-    </div>
-  </div>
+    </div> -->
 </div>
   </body>
+  <script>
+    let hospital_detail=JSON.parse(localStorage.getItem("hospital_detail"))
+    let main_cont =document.querySelector(".main_cont")
+
+
+    for (let i = 0; i < hospital_detail.length; i++) {
+      main_cont.innerHTML+=`
+       <a href="./hospital_details.html?name=${hospital_detail[i]["hospital_name"]}" class="cont_content">
+      <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
+      <p><span>${hospital_detail[i]["hospital_name"]}</span></p>
+      <p>${hospital_detail[i]["hospital_address"]} ${hospital_detail[i]["district"]}</p>
+    </a>
+      `
+    }
+  </script>
+  </html>

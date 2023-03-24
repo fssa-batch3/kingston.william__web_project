@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/blood_details.css">
     <link rel="stylesheet" href="../assets/css/home.css">
 </head>
-<body>
+
      <!--navbar-->
      <header>
         <nav>
@@ -25,16 +26,70 @@
            </div>
          </nav>
        </header>
+       <body>
        <div class="main_container">
-        <div class="container_left">
+  
+       </div>
+       </body>
+       <script>
+
+//get url from search bar
+const url = window.location.search;
+//console.log(url);
+const urlParams = new URLSearchParams(url);
+//console.log(urlParams);
+const hospital_name = urlParams.get("name")
+
+let hospital_details = JSON.parse(localStorage.getItem("hospital_detail"))
+let index_value
+hospital_details.forEach((e,index) => {
+  if(e["hospital_name"]==hospital_name){
+    index_value = index
+  }
+})
+
+      let main_container = document.querySelector(".main_container")
+        main_container.innerHTML= `
+         <div class="container_left">
+          <h1>${hospital_details[index_value]["hospital_name"]}</h1>
+          <h3 ><span id="grey">24*7 Service</span> </h3>
             <img src="../assets/img/hospital_img.jpg" alt="hospital img"/>
         </div>
         <div class="container_right">
-           <p>District : chennai</p>
-           <p>State    : TamilNadu</p>
-           <p>Address  : MDR452, Gandhi Nagar, Thiruvengadam Nagar, Perungudi, Chennai, Tamil Nadu 600096</p> 
-           <p>Phone No : 04461666666</p>
-           <p>Pincode  : 600096</p>
-        </div>
-       </div>
-       
+           <div class="details_list">
+            <div class="details">
+              <p>Hospital Name</p>
+              <span>${hospital_details[index_value]["hospital_name"]}</span>
+            </div>
+            <div class="details">
+              <p>Hospital_address</p>
+              <span>${hospital_details[index_value]["hospital_address"]}</span>
+            </div>
+            <div class="details">
+              <p>District</p>
+              <span>${hospital_details[index_value]["district"]}</span>
+            </div>
+            <div class="details">
+              <p>Pincode</p>
+              <span>${hospital_details[index_value]["pincode"]}</span>
+            </div>
+            <div class="details">
+              <p>Hospital license</p>
+              <span>${hospital_details[index_value]["hosp_license"]}</span>
+            </div>
+            <div class="details">
+              <p>Telephone number</p>
+              <span>${hospital_details[index_value]["tel_num"]}</span>
+            </div>
+            <div class="blood_stock">
+              <h4>Blood Stock Available:</h4>
+            <div class="details">
+              <p>A+ve : 100 units</p>
+              <p>B+ve : 100 units</p>
+              <p>C+ve : 100 units</p>
+            </div>
+          </div>
+           </div>
+        </div>`
+       </script>
+       </html>

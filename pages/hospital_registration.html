@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/hospital_registration.css">
+    <title>Document</title>
+  </head>
+  <style>
+    .raised-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 3px 0px #2980b9;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .raised-button:hover {
+      background-color: #2980b9;
+      box-shadow: 0px 5px 0px #2980b9;
+      transform: translateY(-2px);
+    }
+  </style>
+  <body>
+    <div class="cont1">
+      <div class="cont_2main">
+        <div class="cont_2right">
+          <h2>Hospital Registration</h2>
+          <form  id="registration_form">       
+
+          <div class="input-field">
+            <label for="hospital_name">Hospital Name</label>
+            <input type="text" id="hospital_name" required />
+          </div>
+
+          <div class="input-field">
+            <label for="district">District</label>
+            <input type="text" id="district" required />
+          </div>
+
+          <div class="input-field">
+            <label for="hospital_address">Address</label>
+            <input type="text" id="hospital_address" required />
+          </div>
+
+          <div class="input-field">
+            <label for="pincode">Area Pincode</label>
+            <input type="number" id="pincode" required />
+          </div>
+
+          <div class="input-field">
+            <label for="tel_num">Contact No</label>
+            <input type="text" id="tel_num" required />
+          </div>
+
+          <div class="input-field">
+            <label for="gmail">Gmail</label>
+            <input type="email" id="gmail" required />
+          </div>
+
+          <!-- <div class="input-field">
+            <label >Blood Component Available</label>
+            <input type="text" id="" />
+          </div> -->
+          <div class="blood_availability">
+            <p>Blood availability</p>
+            <label for="blood_group_avail">
+              Blood Group Availability
+              <input type="text" id="blood_group_avail" class="blood_group_avail"/>
+            </label>
+            <label for="blood_stock_avail">
+              Blood Stock Availability(in Units)
+              <input type="number" id="blood_stock_avail"class="blood_stock_avail" />
+            </label>
+
+            <label for="blood_group_avail">
+                Blood Group Availability
+                <input type="text" id="blood_group_avail" class="blood_group_avail"/>
+              </label>
+              <label for="blood_stock_avail">
+                Blood Stock Availability(in Units)
+                <input type="number" id="blood_stock_avail" class="blood_stock_avail"/>
+              </label>
+
+            <button>Add a Blood group</button>
+          </div>
+
+          <div class="input-field">
+            <label for="hosp_license">Hospital License</label>
+            <input type="text" id="hosp_license" required />
+          </div>
+
+          <div class="input-field">
+            <label for="hospital_renew">Hospital Renewed Year</label>
+            <input type="date" id="hospital_renew" required />
+          </div>
+
+          <!-- <div class="input-field"> -->
+            <!-- <label for="add_img">Add image</label> -->
+            <!-- <input type="file" id="add_img" /> -->
+
+          <!-- </div>-->
+          <div class="add_img">
+            <img src="../assets/img/profile_img.png" alt="img" id="changed_photo">
+            <input type="file" id="add_image_button"><label for="add_image_button">Add Image</label>
+          </div>
+          <button type="submit" class="raised-button ">Submit</button>
+        </form>
+        </div>
+        <!-- <a href="pages/signup.html">edit</a> -->
+        <!-- <a href="pages/signup.html"></a> -->
+ 
+      </div>
+    </div>
+    <script>
+        // hospital_name
+        // district  hospital_address  pincode tel_num gmail blood_group_avail blood_stock_avail hosp_license  hospital_renew  add_img
+        let registration_form = document.getElementById("registration_form")
+
+        registration_form.addEventListener("submit",e=>{
+            e.preventDefault()
+
+
+            let hospital_name = document.getElementById("hospital_name").value
+        let district = document.getElementById("district").value
+        let hospital_address = document.getElementById("hospital_address").value
+        let pincode = document.getElementById("pincode").value
+        let tel_num = document.getElementById("tel_num").value
+        let blood_group_avail = document.querySelectorAll(".blood_group_avail")
+        let blood_stock_avail = document.querySelectorAll(".blood_stock_avail")
+        let hosp_license = document.getElementById("hosp_license").value
+        let hospital_renew = document.getElementById("hospital_renew").value
+        let add_image_button =document.getElementById("add_image_button")
+        let changed_photo= document.getElementById("changed_photo")
+        
+            
+        let total_blood_avail = []
+        for(let i = 0;i<blood_group_avail.length;i++){
+            let blood_avail ={
+            "blood_group_avail":blood_group_avail[i].value,
+            "blood_stock_avail":blood_stock_avail[i].value
+        }
+        total_blood_avail.push(blood_avail)
+        }
+
+        let hospital_detail = localStorage.getItem("hospital_detail")? JSON.parse(localStorage.getItem("hospital_detail")): [] //localStorage.getItem("hospital_detail")? JSON.parse(localStorage.getItem("hospital_detail")):
+        
+
+
+        // let hospital_image = document.querySelector("#add_img");
+    //     add_image_button.addEventListener("click", function () {
+    //     let change_photo = this.files[0];
+    //     if (change_photo) {
+    //         const reader = new FileReader();
+    //         reader.addEventListener("load", function () {
+    //           change_photo.setAttribute("src", reader.result);
+    //             let temp = JSON.parse(localStorage.getItem("temp"))??[]
+    //             temp.forEach(element => {
+    //             });
+    //             console.log(reader.result);
+    //             temp[0]["image"] = image.getAttribute("src")
+    //             localStorage.setItem("temp", JSON.stringify(temp))
+    //         })
+    //         reader.readAsDataURL(change_photo);
+    //     }
+    // })
+    // let temp= JSON.parse(localStorage.getItem("temp"))
+    //     let new_src= temp[0]["image"]
+    //     image.setAttribute("src",new_src)
+
+
+        let hospital_data = {
+            "hospital_name":hospital_name,
+            "district":district,
+            "hospital_address":hospital_address,
+            "pincode":pincode,
+            "tel_num":tel_num,
+            "total_blood_avail":total_blood_avail,
+            "hosp_license":hosp_license,
+            "hospital_renew":hospital_renew,
+        }
+        hospital_detail.push(hospital_data)
+        localStorage.setItem("hospital_detail",JSON.stringify(hospital_detail))
+
+
+        })
+
+    </script>
+  </body>
+</html>
