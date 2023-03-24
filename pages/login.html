@@ -10,12 +10,13 @@
 <body>
     <section>
       <!-- <form id="login-form"></form> -->
+     
       <div class="sec1">
         <img src="../assets/img/logo1.png" alt="logo" class="img"/>
           <form>
             <input type="text" id="username"placeholder="Email address" ><br>
             <input type="password" id="pass" placeholder="Password"><br>
-            <button id="login" onclick="getData()">Log in </button>
+            <button id="login" type="submit">Log in </button>
           </form>
           <div id="or"><span class="check" >OR</span>
           </div>
@@ -26,10 +27,14 @@
       </div>
     </section>
     <section class="sec2">
-        <a href="signup.html" ld="sign"> Don't have an account?<button id = "btn" >sign up</button></a> 
+        <a href="registrationTwo.html" ld="sign"> Don't have an account?<button id = "btn" >sign up</button></a> 
     </section>
+    
+  </body>
     <script>
-    function getData(){
+      let form = document.querySelector("form")
+      form.addEventListener("submit", e => {
+        e.preventDefault()
       const email = document.getElementById("username").value
       const password = document.getElementById("pass").value
 
@@ -47,12 +52,13 @@
         } )
         if(check==1){
           alert("logged in")
-          window.location.href
+          window.location.href="../index.html"
         }
         else{
           alert("invalid")
         }
-      }
+
+      })
     </script>
     <!-- <script>
       const form = document.getElementById("login-form");

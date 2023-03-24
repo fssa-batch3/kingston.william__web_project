@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/css/registration2.css" />
 </head>
 <body>
-	<form id="signup-form"></form>
+<form id="signup-form">
     <div class="sign_btn">
 		<p>Already a member<a href="#">sign in</a></p>
 	</div>
@@ -23,7 +23,6 @@
 			<input type="text"id="username" pattern="[A-Za-z]{2,32}" placeholder="Enter your name" required="true">
 		</div>
 	</div>
-		
 
 		<div class="input-field">
 			<label>Email</label>
@@ -48,8 +47,8 @@
 			                                      Service,privacy policy, and our default Notification Settings.</p>
 		
 	<div>
-		<button type="submit"onclick="getData()">Sign Up</button>
-		<p><a href="#">Create Account</a></p>
+		<button type="submit">Sign Up</button>
+		<p><a href="login.html">Create Account</a></p>
 	</div>
 </form>
 	</div>
@@ -88,7 +87,11 @@ form.addEventListener("submit", function(event) {
 });
 </script>  -->
 <script>
-	function getData(){
+	const form = document.getElementById("signup-form");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+	// function getData(){
 
 const email = document.getElementById("email").value
 const password = document.getElementById("pass_1").value
@@ -104,7 +107,9 @@ const sri = localStorage.getItem("sri")
 [];
 sri.push(user)
 localStorage.setItem("sri",JSON.stringify(sri))
-}
+
+ window.location.href="login.html"
+});
 </script>
 </body>
 </html>
