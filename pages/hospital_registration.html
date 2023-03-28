@@ -7,67 +7,50 @@
     <link rel="stylesheet" href="../assets/css/hospital_registration.css">
     <title>Document</title>
   </head>
-  <style>
-    .raised-button {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #3498db;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      box-shadow: 0px 3px 0px #2980b9;
-      transition: all 0.2s ease-in-out;
-    }
 
-    .raised-button:hover {
-      background-color: #2980b9;
-      box-shadow: 0px 5px 0px #2980b9;
-      transform: translateY(-2px);
-    }
-  </style>
   <body>
     <div class="cont1">
-      <div class="cont_2main">
-        <div class="cont_2right">
-          <h2>Hospital Registration</h2>
-          <form  id="registration_form">       
 
-          <div class="input-field">
+          <h2>Hospital Registration</h2>
+          <form  id="registration_form"> 
+            <div class="input_fields">      
+
+          <span class="input-field">
             <label for="hospital_name">Hospital Name</label>
             <input type="text" id="hospital_name" required />
-          </div>
+          </span>
 
-          <div class="input-field">
+          <span class="input-field">
             <label for="district">District</label>
             <input type="text" id="district" required />
-          </div>
+          </span>
 
-          <div class="input-field">
+          <span class="input-field">
             <label for="hospital_address">Address</label>
             <input type="text" id="hospital_address" required />
-          </div>
+          </span>
 
-          <div class="input-field">
+          <span class="input-field">
             <label for="pincode">Area Pincode</label>
             <input type="number" id="pincode" required />
-          </div>
+          </span>
 
-          <div class="input-field">
+          <span class="input-field">
             <label for="tel_num">Contact No</label>
             <input type="text" id="tel_num" required />
-          </div>
+          </span>
 
-          <div class="input-field">
+          <span class="input-field">
             <label for="gmail">Gmail</label>
             <input type="email" id="gmail" required />
-          </div>
+          </span>
+        </div>
 
           <!-- <div class="input-field">
             <label >Blood Component Available</label>
             <input type="text" id="" />
           </div> -->
-          <div class="blood_availability">
+          <span class="blood_availability">
             <p>Blood availability</p>
             <label for="blood_group_avail">
               Blood Group Availability
@@ -88,7 +71,7 @@
               </label>
 
             <button>Add a Blood group</button>
-          </div>
+          </span>
 
           <div class="input-field">
             <label for="hosp_license">Hospital License</label>
@@ -111,11 +94,7 @@
           </div>
           <button type="submit" class="raised-button ">Submit</button>
         </form>
-        </div>
-        <!-- <a href="pages/signup.html">edit</a> -->
-        <!-- <a href="pages/signup.html"></a> -->
- 
-      </div>
+
     </div>
     <script>
         // hospital_name
