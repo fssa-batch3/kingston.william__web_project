@@ -20,11 +20,11 @@ DONOR live website - https://kingstonwilliam.github.io/100-Day-Project/
 <h4>Scenario 1: Successfully create an account</h4>
 <p>Steps:</p>
 <ol>
-  <li>Navigate to the signup page.</li>
+  <li>Navigate to the donor register page.</li>
   <li>Enter the required information such as name, email,phone number and
     password.
   </li>
-  <li>After entering the details,Click on the signup button</li>
+  <li>After entering the details,Click on the submit button</li>
 </ol>
 <h4>Expected Result: The user is redirected to the login page.</h4>
 
@@ -39,7 +39,7 @@ DONOR live website - https://kingstonwilliam.github.io/100-Day-Project/
 </ol>
 <h4>Expected Result: The user is redirected to the home page.</h4>
 
-<h2>Donor module</h2>
+<!-- <h2>Donor module</h2>
 <h3>register</h3>
 <h4> scenario 1: Successfully  register as an donor</h4>
 <p>steps:</p>
@@ -48,7 +48,7 @@ DONOR live website - https://kingstonwilliam.github.io/100-Day-Project/
     <li>Enter the required information</li>
     <li>After entering the details,Click on the submit button </li>
 </ol>
-<h4>Expected Result: The user is redirected to the profile page.</h4>
+<h4>Expected Result: The user is redirected to the profile page.</h4> -->
 
 <h2>Donor profile</h2>
 <h4>Scenario 1: you can edit,update and delete in this page</h4>

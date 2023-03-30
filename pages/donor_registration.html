@@ -15,16 +15,16 @@
         <form  id="signup-form" >
         <div class="form first">
             <div class="details personal">
-               <span class="title">personal Details</span> 
+             
             <div class="fields">
                 <div class="input-field">
                     <label>Full Name</label>
-                    <input type="text"id="username" pattern="[A-Za-z]{2,32}" placeholder="Enter your name" required="true">
+                    <input type="text"id="fullname" pattern="[A-Za-z]{2,32}" placeholder="Enter your name" required="true">
                 </div>
 
                 <div class="input-field">
                     <label>Date of Birth</label>
-                    <input type="date" placeholder="Enter Birth date" required>
+                    <input type="date" placeholder="Enter Birth date" required id="dob">
                 </div>
 
                 <div class="input-field">
@@ -45,13 +45,15 @@
 
                     <div class="yesorno">
                         <p>Did you ever donate blood before?</p>
-                        <input type="radio" name="radio" id="opt1">
-                        <label for="op1" class="label1">
-                            <span>Yes</span>
+                        
+                        <label for="donated_before" class="label1">
+                            <input type="radio" name="donated_before" id="donated_before">
+                            Yes
                         </label>
-                        <input type="radio" name="radio" id="opt1">
-                        <label for="op1" class="label1">
-                            <span>No</span>
+                       
+                        <label for="donated_before_no" class="label1">
+                            <input type="radio" name="donated_before" id="donated_before_no">
+                           No
                         </label>
                      </div>
 
@@ -63,10 +65,10 @@
             </div>
              <!--same div -->
             <div class="details ID">
-                <span class="title">Main Details</span> 
+             
              <div class="fields">
                  <div class="input-field">
-                     <label>Address type</label>
+                     <label>Address </label>
                      <input type="text" id="add" placeholder="Enter your Address" required>
                  </div>
  
@@ -77,7 +79,7 @@
  
                  <div class="input-field">
                      <label>State</label>
-                     <input type="text" placeholder="State" required>
+                     <input type="text" placeholder="State" id="state" required>
                  </div>
  
                  
@@ -93,33 +95,46 @@
 
                      <div class="yesorno">
                         <p>Do you suffer any Diseases / Allergies before?</p>
-                        <input type="radio" name="radio" id="opt1">
+                        
                         <label for="op1" class="label1">
-                            <span>Yes</span>
+                            <input type="radio" name="radio" id="diseased_before" >
+                            Yes
                         </label>
-                        <input type="radio" name="radio" id="opt1">
+                        
                         <label for="op1" class="label1">
-                            <span>No</span>
+                            <input type="radio" name="radio" id="diseased_before_no">
+                            No
                         </label>
                      </div>
  
                      <div class="input-field">
                          <label>Disease/Allergies Name</label>
-                         <input type="text" placeholder="Enter Disease name" required>
+                         <input type="text" placeholder="Enter Disease name" required id="disease_name">
                      </div>
              </div>
             
+             <div class="password">
+                <div class="input-field">
+                    <label>Enter password</label>
+                    <input type="text" placeholder="Enter password.." required id="password">
+                </div>
+                <div class="input-field">
+                    <label>Confirm password</label>
+                    <input type="text" placeholder="Enter password.." required id="cpassword">
+                </div>
+             </div>
 
-
-
+             <div class="buttons">   
+                          <a href="../index.html" id="back_button">Back</a>
              <button  type="submit" class="submitbtn">
                 Submit
-                <!-- <i class="uil uil-navigator"></i> -->
              </button>
+            </div>
+
+             
             </form>
              </div>
         </div>
-     <!-- </form>        -->
 
 
         </div>
@@ -131,40 +146,65 @@
         form.addEventListener("submit",submit)
         function submit(e) {
             e.preventDefault()
-          const username = document.getElementById("username").value;
+          const fullname = document.getElementById("fullname").value;
+          const dob =document.getElementById("dob").value
           const emailid = document.getElementById("emailid").value;
           const phnum = document.getElementById("phnum").value;
           const gendermf = document.getElementById("gendermf").value;
+          let donated_before = document.getElementById("donated_before")
+          if (donated_before.checked) {
+            donated_before= "yes"
+          }
+          else{
+            donated_before="no"
+          }
           const occupation= document.getElementById("occup").value;
           const address= document.getElementById("add").value;
           const nationality = document.getElementById("nation").value;
+          const state=document.getElementById("state").value;
           const district = document.getElementById("dist").value;
           const bloodgroup = document.getElementById("blood").value;
 
-          localStorage.setItem("name", JSON.stringify(username));
-          localStorage.setItem("email", emailid);
-          localStorage.setItem("number", phnum);
-          localStorage.setItem("gender", gendermf);
-        //   localStorage.setItem("summa","sndjc");
-          localStorage.setItem("occupation", occupation);
-          localStorage.setItem("address",address);
-          localStorage.setItem("nationality",nationality);
-          localStorage.setItem("district",district);
-          localStorage.setItem("bloodgroup", bloodgroup);
-         
-          window.location.href = "profile2.html";
+          let diseased_before = document.getElementById("diseased_before")
+          if (diseased_before.checked) {
+            diseased_before= "yes"
+          }
+          else{
+            diseased_before="no"
+          }
+          const disease_name =document.getElementById("disease_name").value
+
+          let password =document.getElementById("password").value
+          let cpassword =document.getElementById("cpassword").value
+
+          if (password==cpassword) {
+            let donor_details = JSON.parse(localStorage.getItem("donor_details"))?? []
+            let donor_detail ={
+                "fullname":fullname,
+                "dob":dob,
+                "emailid":emailid,
+                "phnum":phnum,
+                "gendermf":gendermf,
+                "donated_before":donated_before,
+                "occupation":occupation,
+                "address":address,
+                "nationality":nationality,
+                "state":state,
+                "district":district,
+                "bloodgroup":bloodgroup,
+                "diseased_before":diseased_before,
+                "disease_name":disease_name,
+                "password":password
+            }
+            donor_details.push(donor_detail)
+            localStorage.setItem("donor_details",JSON.stringify(donor_details))
+              window.location.href = "./login.html";
+
+          }
+          else{
+            alert("password and confirm password doesn't match")
+          }
     
         }
       </script>
-      <!-- <script>
-        const form = document.getElementById("signup-form");
-
-        form.addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            const username = document,getElementById()
-        }
-
-      </script> -->
-     </body>
 </html>

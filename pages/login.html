@@ -38,17 +38,20 @@
       const email = document.getElementById("username").value
       const password = document.getElementById("pass").value
 
-      const king =JSON.parse(localStorage.getItem("sri"))
+      const donor_details =JSON.parse(localStorage.getItem("donor_details"))
 
       let check;
-       king.find(element=>{
-           if(element["user_email"]==email && element["user_password"]==password){
-            return check=1
+      donor_details.find(element=>{
 
+           if(element["emailid"]==email && element["password"]==password){
+            localStorage.setItem("active_user",JSON.stringify(element))
+            console.log("jhbcajcdas");
+            return check=1
            }
            else{
             return check=0
            }
+   
         } )
         if(check==1){
           alert("logged in")
@@ -57,32 +60,29 @@
         else{
           alert("invalid")
         }
-
       })
-    </script>
-    <!-- <script>
-      const form = document.getElementById("login-form");
 
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
 
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+// form.addEventListener("submit", function(event) {
+//   event.preventDefault();
 
-  // Retrieve the user data from local storage
-  const users = JSON.parse(localStorage.getItem("users")) || [];
+//   const username = document.getElementById("username").value;
+//   const password = document.getElementById("password").value;
 
-  // Check if the username and password match any of the stored users
-  const matchedUser = users.find(user => user.username === username && user.password === password);
+//   // Retrieve the user data from local storage
+//   const users = JSON.parse(localStorage.getItem("users")) || [];
 
-  if (matchedUser) {
-    alert("Login successful!");
-    // Redirect the user to the home page or dashboard
-    window.location.href = "index.html";
-  } else {
-    alert("Invalid username or password!");
-  }
-});
-    </script> -->
+//   // Check if the username and password match any of the stored users
+//   const matchedUser = users.find(user => user.username === username && user.password === password);
+
+//   if (matchedUser) {
+//     alert("Login successful!");
+//     // Redirect the user to the home page or dashboard
+//     window.location.href = "index.html";
+//   } else {
+//     alert("Invalid username or password!");
+//   }
+// });
+    </script> 
 </body>
 </html> 

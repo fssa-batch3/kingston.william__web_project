@@ -1,10 +1,10 @@
-for (let count = 1; count <=100; count++) 
-{
-    console.log(count++ ,"***rajini****");
-    console.log(count++ ,"***rajini****");
-    console.log(count +"***superstar****");
+// for (let count = 1; count <=100; count++) 
+// {
+//     console.log(count++ ,"***rajini****");
+//     console.log(count++ ,"***rajini****");
+//     console.log(count +"***superstar****");
    
- }
+//  }
 // for (let count=1; count<=5;  count++)
 // {
 // console.log(count++ , "1 1 1 1 1")
@@ -14,14 +14,12 @@ for (let count = 1; count <=100; count++)
 // console.log(count++ , "5 5 5 5 5")
 
 // }
-
-
-// let num=10;
-// let res='';
-// for(let i=1;i<=num;i++){
-//     for(let j=1;j<=num;j++){
-//         res =res+i;
-//     }
-//     res=res+"\n";
-// }
-// console.log(res);
+let num=10;
+let res='';
+for(let i=1;i<=num;i++){
+    for(let j=1;j<=num;j++){
+        res =res+i;
+    }
+    res=res+"\n";
+}
+console.log(res);
