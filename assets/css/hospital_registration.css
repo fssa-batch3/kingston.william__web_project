@@ -71,30 +71,21 @@
   transform: translateY(-2px);
 }
 
-/* .blood_group_avail{
-  margin: 15px;
+.blood_group_avail{
+  
  margin: 10px 20px;
  width: 29%;
  display: flex;
  justify-content: space-evenly;
- height: 40px;
+ height: 30px;
  align-items: center;
  box-sizing: border-box;
+ 
 }
-.blood_stock_avail{
-  margin: 15px;
- margin: 10px 20px;
- width: 29%;
- display: flex;
- justify-content: space-evenly;
- height: 40px;
- align-items: center;
- box-sizing: border-box;
-} */
-.input_fields2{
-  display: flex;
-  flex-wrap: wrap;
-  /* border: 1px solid black; */
-  justify-content: center;
 
+.input_fields2{
+ 
+  flex-wrap: wrap;
+  border: 1px solid black;
+  justify-content: center;
 }
