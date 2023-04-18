@@ -82,7 +82,10 @@
  box-sizing: border-box;
  
 }
+.blood_stock_avail{
+  width: 80px;
 
+}
 .input_fields2{
  
   flex-wrap: wrap;
