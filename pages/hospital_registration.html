@@ -22,7 +22,7 @@
 
           <span class="input-field">
             <label for="district">District</label>
-            <input type="text" id="district" required />
+            <input type="text" pattern="[A-Za-z]{2,32}" id="district" required />
           </span>
 
           <span class="input-field">
@@ -32,12 +32,12 @@
 
           <span class="input-field">
             <label for="pincode">Area Pincode</label>
-            <input type="number" id="pincode" required />
+            <input type="number" pattern="[0-9]{10}" id="pincode" required />
           </span>
 
           <span class="input-field">
             <label for="tel_num">Contact No</label>
-            <input type="text" id="tel_num" required />
+            <input type="text"  pattern="[0-9]{10}" id="tel_num" required />
           </span>
 
           <span class="input-field">
@@ -66,18 +66,18 @@
 
           <span class="input-field">
             <label for="hosp_license">Hospital License</label>
-            <input type="text" id="hosp_license" required />
+            <input type="text" id="hosp_license" required/>
           </span>
 
           
           <span class="input-field">
             <label for="hospital_renew">Hospital Renewed Year</label>
-            <input type="date" id="hospital_renew" required />
+            <input type="date" id="hospital_renew" required/>
           </span>
                  
           <span class="input-field">
           <label for="Hospital Type">Hospital Type</label>
-          <input type="text" id="Hospital Type" required />
+          <input type="text" id="Hospital Type" required/>
         </span>
 
        
@@ -92,12 +92,12 @@
             <label for="blood_group_avail">  Blood Group Availability</label>  
             <p>1.</p> 
           <input type="text" id="blood_group_avail" class="blood_group_avail" required/>
-          <input type="number" id="blood_stock_avail" class="blood_stock_avail" required/>
+          <input type="number"  pattern="[0-9]{10}" id="blood_stock_avail" class="blood_stock_avail" required/>
         </span>
         <span class="input-field">
           <p>2.</p>
           <input type="text" id="blood_group_avail" class="blood_group_avail" required/>
-          <input type="number" id="blood_stock_avail" class="blood_stock_avail" required/>
+          <input type="number" pattern="[0-9]{10}" id="blood_stock_avail" class="blood_stock_avail" required/>
         </span>
 
           <button>Add a Blood group</button>
@@ -164,7 +164,7 @@
     //             console.log(reader.result);
     //             temp[0]["image"] = image.getAttribute("src")
     //             localStorage.setItem("temp", JSON.stringify(temp))
-    //         })
+    //         })      
     //         reader.readAsDataURL(change_photo);
     //     }
     // })

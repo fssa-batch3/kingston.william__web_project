@@ -1,0 +1,11 @@
+.container1{
+    align-items: center;
+    background-color: #dee4f0;
+    justify-content: space-around;
+}
+.container1_left img{
+width: 500px;
+}
+.container1_right{
+    width: 50%;
+}

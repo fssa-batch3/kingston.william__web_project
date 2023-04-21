@@ -40,7 +40,7 @@
 
                     <div class="input-field">
                         <label>Gender</label>
-                        <input type="text"id="gendermf" placeholder="Enter your gender" required>
+                        <input type="text" pattern="[A-Za-z]{2,32}" id="gendermf" placeholder="Enter your gender" required>
                     </div>
 
                     <div class="yesorno">
@@ -74,18 +74,18 @@
  
                  <div class="input-field">
                      <label>Nationality</label>
-                     <input type="text" id="nation" placeholder="Enter your Nationality" required>
+                     <input type="text" pattern="[A-Za-z]{2,32}" id="nation" placeholder="Enter your Nationality" required>
                  </div>
  
                  <div class="input-field">
                      <label>State</label>
-                     <input type="text" placeholder="State" id="state" required>
+                     <input type="text"  pattern="[A-Za-z]{2,32}" placeholder="State" id="state" required>
                  </div>
  
                  
                      <div class="input-field">
                          <label>District</label>
-                         <input type="text" id="dist" placeholder="Enter your District" required>
+                         <input type="text"  pattern="[A-Za-z]{2,32}" id="dist" placeholder="Enter your District" required>
                      </div>
  
                      <div class="input-field">
@@ -116,11 +116,11 @@
              <div class="password">
                 <div class="input-field">
                     <label>Enter password</label>
-                    <input type="text" placeholder="Enter password.." required id="password">
+                    <input type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter password.." required id="password">
                 </div>
                 <div class="input-field">
                     <label>Confirm password</label>
-                    <input type="text" placeholder="Enter password.." required id="cpassword">
+                    <input type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter password.." required id="cpassword">
                 </div>
              </div>
 
