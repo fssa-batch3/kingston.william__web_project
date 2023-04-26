@@ -48,21 +48,7 @@
         <div class="input_fields">
 
     
-<!-- 
-          <span class="input-field">
-            <label for="blood_stock_avail"> Blood Stock Availability(in Units)</label>
-             <input type="number" id="blood_stock_avail"class="blood_stock_avail" />
-             </span>
 
-          <span class="input-field">
-            <label for="blood_group_avail">Blood Group Availability </label>   
-            <input type="text" id="blood_group_avail" class="blood_group_avail"/>
-          </span>
-
-          <span class="input-field"> 
-            <label for="blood_stock_avail">Blood Stock Availability(in Units)</label>
-            <input type="number" id="blood_stock_avail" class="blood_stock_avail"/>
-          </span> -->
 
           <span class="input-field">
             <label for="hosp_license">Hospital License</label>
@@ -80,10 +66,17 @@
           <input type="text" id="Hospital Type" required/>
         </span>
 
-       
+        <span class="input-field">
+          <label for="password">Password</label>
+          <input type="text" id="password" required/>
+        </span>
 
-          <span class="input-field"> </span>
-          <span class="input-field"> </span>
+        <span class="input-field">
+          <label for="confirm_pass">Confirm Password</label>
+          <input type="text" id="con_password" required/>
+        </span>
+
+       
 
         
         </div>
@@ -100,7 +93,7 @@
           <input type="number" pattern="[0-9]{10}" id="blood_stock_avail" class="blood_stock_avail" required/>
         </span>
 
-          <button>Add a Blood group</button>
+          <!-- <button>Add a Blood group</button> -->
        
 
         </div>
@@ -134,11 +127,15 @@
         let blood_stock_avail = document.querySelectorAll(".blood_stock_avail")
         let hosp_license = document.getElementById("hosp_license").value
         let hospital_renew = document.getElementById("hospital_renew").value
-        let add_image_button =document.getElementById("add_image_button")
-        let changed_photo= document.getElementById("changed_photo")
-        
-            
-        let total_blood_avail = []
+        let add_image_button =document.getElementById("add_image_button").value
+        let changed_photo= document.getElementById("changed_photo").value
+        let gmail= document.getElementById("gmail").value
+        let password =document.getElementById("password").value
+        let con_password =document.getElementById("con_password").value
+
+
+if(password==con_password){
+  let total_blood_avail = []
         for(let i = 0;i<blood_group_avail.length;i++){
             let blood_avail ={
             "blood_group_avail":blood_group_avail[i].value,
@@ -147,30 +144,7 @@
         total_blood_avail.push(blood_avail)
         }
 
-        let hospital_detail = localStorage.getItem("hospital_detail")? JSON.parse(localStorage.getItem("hospital_detail")): [] //localStorage.getItem("hospital_detail")? JSON.parse(localStorage.getItem("hospital_detail")):
-        
-
-
-        // let hospital_image = document.querySelector("#add_img");
-    //     add_image_button.addEventListener("click", function () {
-    //     let change_photo = this.files[0];
-    //     if (change_photo) {
-    //         const reader = new FileReader();
-    //         reader.addEventListener("load", function () {
-    //           change_photo.setAttribute("src", reader.result);
-    //             let temp = JSON.parse(localStorage.getItem("temp"))??[]
-    //             temp.forEach(element => {
-    //             });
-    //             console.log(reader.result);
-    //             temp[0]["image"] = image.getAttribute("src")
-    //             localStorage.setItem("temp", JSON.stringify(temp))
-    //         })      
-    //         reader.readAsDataURL(change_photo);
-    //     }
-    // })
-    // let temp= JSON.parse(localStorage.getItem("temp"))
-    //     let new_src= temp[0]["image"]
-    //     image.setAttribute("src",new_src)
+        let hospital_detail =  JSON.parse(localStorage.getItem("hospital_details"))?? [] //localStorage.getItem("hospital_detail")? JSON.parse(localStorage.getItem("hospital_detail")):
 
 
         let hospital_data = {
@@ -182,13 +156,29 @@
             "total_blood_avail":total_blood_avail,
             "hosp_license":hosp_license,
             "hospital_renew":hospital_renew,
+            gmail,
+            password
         }
+        localStorage.setItem("active_hospital",gmail)
         hospital_detail.push(hospital_data)
-        localStorage.setItem("hospital_detail",JSON.stringify(hospital_detail))
-          window.location.href="hospital_details.html"
+        localStorage.setItem("hospital_details",JSON.stringify(hospital_detail))
+        localStorage.setItem("status","hospital")
 
-        })
+          window.location.href="./blood_availability.html"
 
+        }
+      else{
+        alert("password and confirm password doesn't match")
+      }})
+//try
+
+      
+            
+     
+
+
+
+        
     </script>
   </body>
 </html>

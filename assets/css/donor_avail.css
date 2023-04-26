@@ -9,3 +9,20 @@ width: 500px;
 .container1_right{
     width: 50%;
 }
+ul {
+	list-style: none;
+	padding: 0;
+}
+li {
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+}
+h2 {
+	margin-top: 0;
+}
+.name {
+	font-weight: bold;
+}
+.email {
+	color: #666;
+}

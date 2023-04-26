@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
+    <link rel="stylesheet" href="./assets/css/common.css">
   </head>
   <body>
      <!--navbar-->
@@ -18,7 +19,7 @@
           <li><a href="pages/blood_availability.html">Blood Availability</a></li>
           <li><a href="pages/donor_availability.html">Donor Availability</a></li>
           <li><a href="pages/donor_registration.html">Register</a></li>
-          <li><a href="pages/donor_profile.html">Profile</a></li>
+          <li><span href="" id="profile_page">Profile</span></li>
       </div>
         <div class="login_signup">
           <!-- <a href="pages/registrationTwo.html"><button>Signup</button></a> -->
@@ -220,3 +221,33 @@
 
 </footer>
 </body>
+<!-- <script src="./assets/js/common.js"></script> -->
+<script>
+  let status= localStorage.getItem("status")
+  let login_signup =document.querySelector(".login_signup")
+  let donate_get_blood_div = document.querySelector(".donate_get_blood")
+  if(status){
+    donate_get_blood_div.classList.add("not_view")
+    login_signup.classList.add("not_view")
+  }
+  let profile_page =document.getElementById("profile_page")??""
+let local_status =localStorage.getItem("status")
+console.log(local_status);
+profile_page.addEventListener("click",e=>{
+    if(local_status=="hospital"){
+// alert("gfdsa")  
+
+        window.location.href="./pages/hospital_profile.html"
+}
+    else if(local_status=="donor"){
+// alert("gfdsa")  
+
+        window.location.href="./pages/donor_profile.html"
+    }
+    else{
+        alert("Register as a Donor or Register your Hospital")
+    }
+})
+// localStorage.setItem("status","donor")
+</script>
+</html>

@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="../assets/css/blood_availability.css">
     <link rel="stylesheet" href="../assets/css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+    <script src="../assets/js/main.js"></script>
+    <link rel="stylesheet" href="../assets/css/common.css">
   </head>
   <body>
      <!--navbar-->
@@ -18,8 +19,8 @@
           <li class="active"><a href="../index.html">Home</a></li>
           <li><a href="blood_availability.html">Blood Availability</a></li>
           <li><a href="donor_availability.html">Donor Availability</a></li>
-          <li><a href="donor_registration.html">Register</a></li>
-          <li><a href="donor_profile.html">Profile</a></li>
+          <li id="register"><a href="donor_registration.html" >Register</a></li>
+          <li><a id="profile_page">Profile</a></li>
       </div>
         <div class="login_signup">
           <button>Signup</button>
@@ -44,7 +45,7 @@
   </div>
       <form>
           
-          <select id ="state">
+          <select>
               <option value="state">Select State</option>
               <option value="state">TAMIL NADU</option>
               <option value="state">KERALA</option>
@@ -56,17 +57,17 @@
           </select>
           
           <select id ="state">
-              <option value="district">Select District</option>
-              <option value="district">CHENNAI</option>
-              <option value="district">COIMBATORE</option>
-              <option value="district">ARIYALUR</option>
-              <option value="district">GOA</option>
-              <option value="district">MADURAI</option>
-              <option value="district">THANJAVUR</option>
-              <option value="district">TIRUNELVELI</option>
+              <option >Select District</option>
+              <option >MGR road, Tharamani CHENNAI</option>
+              <option >COIMBATORE</option>
+              <option >ARIYALUR</option>
+              <option >GOA</option>
+              <option >MADURAI</option>
+              <option >TIRUNELVELI</option>
+              <option >THANJAVUR</option>
           </select>
        
-          <select id ="state">
+          <select >
               <option value="district">Select Blood Group</option>
               <option value="district">AB-ve</option>
               <option value="district">AB+ve</option>
@@ -103,15 +104,15 @@
 
 
 <div class="main_cont">
-  <a href="./hospital_details.html?name=KING" class="cont_content">
+  <!-- <a href="./hospital_details.html?name=KING" class="cont_content">
     <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
     <p><span>KIng hospital</span></p>
     <p>madurai</p>
-  </a>
+  </a> -->
 </div>
   </body>
   <script>
-    let hospital_detail=JSON.parse(localStorage.getItem("hospital_detail"))
+    let hospital_detail=JSON.parse(localStorage.getItem("hospital_details"))
     let main_cont =document.querySelector(".main_cont")
 
 
@@ -125,5 +126,44 @@
       `
       // `dscnjjczjz ${jnwcnc}`
     }
+  </script>
+<script src="../assets/js/common.js"></script>
+
+  <script>
+    let place=document.getElementById("state")
+    let option=document.getElementsByTagName("option")
+
+    let selectedValue;
+    let selvalue;
+    place.addEventListener("change", (event) => {
+        check = event.target.innerText
+        selectedValue = event.target.value;
+        console.log(selectedValue);
+        selvalue= selectedValue
+    //    return selvalue
+    let dic = document.querySelectorAll(".cont_content");
+    dic.forEach(ex => {
+        let child = ex.children[2].textContent.toLowerCase();
+        console.log(child +"iam");
+        
+        if (child===selvalue) {
+          ex.style.display = "block"
+          // console.log("isac");
+        }
+        else {
+          ex.style.display = "none"
+          // console.log("deva");
+        }
+      })
+    });
+
+    let status= localStorage.getItem("status")
+  let login_signup =document.querySelector(".login_signup")
+  let register = document.querySelector("#register")
+  if(status){
+    register.classList.add("not_view")
+    login_signup.classList.add("not_view")
+  }
+
   </script>
   </html>

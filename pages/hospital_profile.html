@@ -18,7 +18,7 @@
           <li class="active"><a href="../index.html">Home</a></li>
           <li><a href="blood_availability.html">Blood Availability</a></li>
           <li><a href="donor_availability.html">Donor Availability</a></li>
-          <li><a href="./registration.html">Register</a></li>
+          <li  id="register"><a href="./registration.html">Register</a></li>
           <li><a href="profile2.html">Profile</a></li>
       </div>
         <div class="login_signup">
@@ -29,21 +29,23 @@
     </header>
    <div class="cont1">
         <div class="cont1_left">
-            <img src="../assets/img/profile_image.jpg" alt="img">
+            <img src="../assets/img/profile_hospital_img.jpg" alt="img">
+            <p>Hospital Name</p>
         </div>
+        <img src="../assets/img/logout_button.png"alt="img" id="logout_button" class="">
         <div class="cont1_right">
-          <h2>Hospital Profile</h2>
-          <div class="details">
+          <h2><span>H</span>ospital Profile</h2>
+          <div class="details"> 
             <div class="detail">
               <p>Hospital Name</p>
-              <p id="full_name">---</p>
+              <p id="hospital_name">---</p>
             </div>
-            <div class="detail">
+            <!-- <div class="detail">
               <p>Hospital Renewed Year</p>
-              <p id="dob">---</p>
-            </div> 
+              <p id="hospital_renewedyear">---</p>
+            </div>  -->
             <div class="detail">
-              <p>Email id</p>
+              <p>Email Id</p>
               <p id="email_id">---</p>
             </div>
              <!-- <div class="detail">
@@ -51,17 +53,14 @@
               <p id="gender">---</p>
             </div> -->
              <div class="detail">
-              <p>Phone number</p>
+              <p>Phone Number</p>
               <p id="ph_no">---</p>
             </div>
             <div class="detail">
               <p>Hospital Type</p>
               <p id="occupation">---</p>
             </div>  
-            <div class="detail">
-              <p>Blood Group Availability</p>
-              <p id="blood_group">---</p>
-            </div> 
+           
              <div class="detail">
               <p>Address</p>
               <p id="address">---</p>
@@ -72,16 +71,20 @@
             </div>
             <div class="detail">
               <p>Area Pincode</p>
-              <p id="state">---</p>
+              <p id="area_pincode">---</p>
             </div> 
             <div class="detail">
               <p>Hospital License</p>
-              <p id="nationality">---</p>
+              <p id="hospital_licence">---</p>
             </div> 
-            <!-- <div class="detail">
-              <p> Diseased before ?</p>
-              <p id="diseased_before">---</p>
-            </div>  -->
+            <div class="detail">
+              <p>Hospital Renewed Year</p>
+              <p id="hospital_renew">---</p>
+            </div> 
+            <div class="detail">
+              <p>Blood Group Availability</p>
+              <p id="blood_group">---</p>
+            </div> 
              <!-- <div class="detail">
               <p>Have you Donated blood before</p>
               <p id="donated_before">---</p>
@@ -95,5 +98,6 @@
         </div>
 
     </div>
+    <script src="../assets/js/hospital_profile.js"></script>
   </body>
   </html>

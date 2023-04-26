@@ -170,3 +170,21 @@ let ref = active_user["fullname"]
 
     window.location.href ="./donor_profile.html"
 }
+
+
+
+let logout_btn =document.querySelector("#logout_button")
+logout_btn.addEventListener("click",e=>{
+  localStorage.removeItem("status")
+  localStorage.removeItem("active_user")
+  window.location.href="../index.html"
+})
+
+
+let _status= localStorage.getItem("status")
+let login_signup =document.querySelector(".login_signup")
+let register = document.querySelector("#register")
+if(_status){
+  register.classList.add("not_view")
+  login_signup.classList.add("not_view")
+}

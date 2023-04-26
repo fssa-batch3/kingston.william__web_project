@@ -79,3 +79,12 @@
 .not_view{
     display: none;
 }
+#logout_button{
+    width: 40px;
+    margin-left: 870px;
+    
+    /* position:absolute; */
+    
+    bottom: 130px;
+    right: 140px;
+}

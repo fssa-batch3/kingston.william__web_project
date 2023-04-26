@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/donor_profile.css">
     <link rel="stylesheet" href="../assets/css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+  <link rel="stylesheet" href="../assets/css/common.css">
   </head>
   <body>
      <!--navbar-->
@@ -18,13 +18,14 @@
           <li class="active"><a href="../index.html">Home</a></li>
           <li><a href="blood_availability.html">Blood Availability</a></li>
           <li><a href="donor_availability.html">Donor Availability</a></li>
-          <li><a href="./registration.html">Register</a></li>
+          <li id="register"><a href="./registration.html">Register</a></li>
           <li><a href="profile2.html">Profile</a></li>
+
       </div>
-        <div class="login_signup">
+        <!-- <div class="login_signup">
           <button>Signup</button>
           <button>Login</button>
-        </div>
+        </div> -->
       </nav>
     </header>
    <div class="cont1">
@@ -32,6 +33,7 @@
             <img src="../assets/img/profile_image.jpg" alt="img">
         </div>
         <div class="cont1_right">
+          <img src="../assets/img/logout_button.png"alt="img" id="logout_button" class="">
           <h2>Profile</h2>
           <div class="details">
             <div class="detail">
@@ -89,6 +91,7 @@
           </div>
           <img src="../assets/img/save_button.png" alt="img" id="save_button" class="not_view">
           <img src="../assets/img/edit_button.jpg" alt="img" id="edit_button" class="view">
+         
 
 
 
@@ -97,4 +100,44 @@
     </div>
   </body>
   <script src="../assets/js/donor_profile.js"></script>
+  <!-- <script>
+    let form =  document.querySelector("form")
+        form.addEventListener("submit",submit)
+        function submit(e) {
+            e.preventDefault()
+          const hospital_name = document.getElementById("hospital_name").value;
+          const districts =document.getElementById("district").value
+          const emailid = document.getElementById("emailid").value;
+          const pincode = document.getElementById("pincode").value;
+          const tel_num = document.getElementById("tel_num").value;
+          const hospital_address= document.getElementById("hospital_address").value;
+          const district = document.getElementById("district").value;
+          const blood_stock_avail = document.getElementById("blood_stock_avail").value;
+          let password =document.getElementById("password").value
+          let conpassword =document.getElementById("con_password").value
+
+          if (password==cpassword) {
+            let hospital_details = JSON.parse(localStorage.getItem("hospital_details"))?? []
+            let hospital_detail ={
+                "hospital_name":hospital_name,
+                "districts":district,
+                "emailid":emailid,
+                "pincode":pincode,
+                "tel_num":tel_num,
+                "hospital_address":hospital_address,
+                "district":district,
+                "blood_stock_avail":blood_stock_avail,
+                "password":password
+            }
+            donor_details.push(hospital_detail)
+            localStorage.setItem("hospital_details",JSON.stringify(hospital_details))
+              window.location.href = "./login.html";
+
+          }
+          else{
+            alert("password and confirm password doesn't match")
+          }
+    
+        }
+  </script> -->
   </html>

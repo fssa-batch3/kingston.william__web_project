@@ -15,15 +15,22 @@
     display: flex;
 }
 .cont1 img{
-    width:70%;
+    width:90%;
+    margin-top: 150px;
+    border-radius: 90%;
+   
+    
+
 }
 .cont1_left{
-    border:  solid black;
-    border-width: 0px 20px 0px 0px;
+    border: solid black;
+    border-width: 0px 5px 0px 0px;
+    border-radius: 600%;
     width: 25%;
     display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: center;
+   
 }
 .cont1_right{
     width:75%;
@@ -34,6 +41,8 @@
 .cont1_right h2{
     color: rgb(42, 42, 42);
     font-size: 32px;
+    text-align: center;
+    text-decoration:dashed;
 }
 .details{
     margin: 25px 0px;
@@ -59,7 +68,7 @@
 }
 .detail input:focus{
     outline: none;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 5px 0px, rgba(60, 64, 67, 0.15) 0px 1px 5px 1px;
 }
 #edit_button{
     width: 80px;
@@ -78,4 +87,19 @@
 }
 .not_view{
     display: none;
+}
+span{
+    color:#ff6a39;
+}
+/* #logout_button */
+#logout_button{
+    width: 40px;
+    /* height:px; */
+    /* margin-left: 870px; */
+    position:absolute;
+    top: 65px;
+    right: 150px;
+    
+    /* bottom: 130px;
+    right: 140px; */
 }

@@ -18,7 +18,7 @@
              <li><a href="#">Blood Availability</a></li>
              <li><a href="donor_availability.html">Donor Availability</a></li>
              <li><a href="pages/registration.html">Register</a></li>
-             <li><a href="pages/profile.html">Profile</a></li>
+             <li><a href="pages/profile.html" id="profile_page">Profile</a></li>
          </div>
            <div class="login_signup">
              <button>Signup</button>
@@ -33,14 +33,15 @@
        </body>
        <script>
 
-//get url from search bar
+// get url from search bar
 const url = window.location.search;
 //console.log(url);
 const urlParams = new URLSearchParams(url);
 //console.log(urlParams);
 const hospital_name = urlParams.get("name")
+console.log(hospital_name);
 
-let hospital_details = JSON.parse(localStorage.getItem("hospital_detail"))
+let hospital_details = JSON.parse(localStorage.getItem("hospital_details"))
 let index_value
 hospital_details.forEach((e,index) => {
   if(e["hospital_name"]==hospital_name){
@@ -82,6 +83,10 @@ hospital_details.forEach((e,index) => {
             <div class="details">
               <p>Telephone number</p>
               <span>${hospital_details[index_value]["tel_num"]}</span>
+            </div>
+            <div class="details">
+              <p>EMAIL ID</p>
+              <span>${hospital_details[index_value]["emailid"]}</span>
             </div>
             <div class="blood_stock">
               <h4>Blood Stock Available:</h4>
