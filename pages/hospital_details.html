@@ -35,9 +35,9 @@
 
 // get url from search bar
 const url = window.location.search;
-//console.log(url);
+console.log(url,"url");
 const urlParams = new URLSearchParams(url);
-//console.log(urlParams);
+console.log(urlParams,"urlparams");
 const hospital_name = urlParams.get("name")
 console.log(hospital_name);
 
@@ -50,7 +50,9 @@ hospital_details.forEach((e,index) => {
 })
 
       let main_container = document.querySelector(".main_container")
-        main_container.innerHTML= `
+        main_container.innerHTML=
+        
+        `
          <div class="container_left">
           <h1>${hospital_details[index_value]["hospital_name"]}</h1>
           <h3 ><span id="grey">24*7 Service</span> </h3>
@@ -86,7 +88,7 @@ hospital_details.forEach((e,index) => {
             </div>
             <div class="details">
               <p>EMAIL ID</p>
-              <span>${hospital_details[index_value]["emailid"]}</span>
+              <span>${hospital_details[index_value]["gmail"]}</span>
             </div>
             <div class="blood_stock">
               <h4>Blood Stock Available:</h4>
