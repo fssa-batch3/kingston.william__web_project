@@ -46,9 +46,67 @@ let hospital_details_data = [
     password: "tirunelveli@123",
   },
 ];
-let check =JSON.parse(localStorage.getItem("hospital_details")) ?? 1
+let check = JSON.parse(localStorage.getItem("hospital_details")) ?? 1;
 
-if(check==1){
-localStorage.setItem("hospital_details",JSON.stringify(hospital_details_data))
-console.log("details added");
+if (check == 1) {
+  localStorage.setItem(
+    "hospital_details",
+    JSON.stringify(hospital_details_data)
+  );
+  console.log("details added");
 }
+
+let name = [
+  {
+    fullname: "Barath",
+    dob: "2003-05-27",
+    emailid: "barath@gmail.com",
+    phnum: "6383705215",
+    gendermf: "Male",
+    donated_before: "no",
+    occupation: "FWSA",
+    address: "perunguidi,tharamani",
+    age: "19",
+    state: "TamilNadu",
+    district: "Chennai",
+    bloodgroup: "O+",
+    diseased_before: "no",
+    disease_name: "None",
+    password: "123@Barath",
+  },
+  {
+    fullname: "Srikannan",
+    dob: "2003-09-30",
+    emailid: "srikannan@gmail.com",
+    phnum: "6383705215",
+    gendermf: "Male",
+    donated_before: "no",
+    occupation: "Fwsa",
+    address: "perunguidi,tharamani",
+    age: "19",
+    state: "TamilNadu",
+    district: "Chennai",
+    bloodgroup: "O+",
+    diseased_before: "no",
+    disease_name: "None",
+    password: "123@Srikannan",
+  },
+  {
+    fullname: "Sasi",
+    dob: "2004-07-08",
+    emailid: "sasi@gmail.com",
+    phnum: "6383705215",
+    gendermf: "Male",
+    donated_before: "no",
+    occupation: "Fwsa",
+    address: "perunguidi,tharamani",
+    age: "18",
+    state: "TamilNadu",
+    district: "Chennai",
+    bloodgroup: "O+",
+    diseased_before: "no",
+    disease_name: "None",
+    password: "123@Sasi",
+  },
+];
+

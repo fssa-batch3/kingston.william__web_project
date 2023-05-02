@@ -11,33 +11,53 @@
 <body>
     <div class="wrapper">
         <div class="title-text">
-          <div class="title login">Login Form</div>
-          <div class="title signup">Signup Form</div>
+          <div class="title login">Login</div>
+          <div class="title signup">Login</div>
         </div>
         <div class="form-container">
           <div class="slide-controls">
             <input type="radio" name="slide" id="login" checked>
             <input type="radio" name="slide" id="signup">
-            <label for="login" class="slide login">Login</label>
-            <label for="signup" class="slide signup">Signup</label>
+            <label for="login" class="slide login">Donor</label>
+            <label for="signup" class="slide signup">Hospital</label>
             <div class="slider-tab"></div>
           </div>
           <div class="form-inner">
-            <form action="#" class="login">
+            <!--  donor login============================ -->
+            <form action="#" class="donor_login login" >
               <div class="field">
-                <input type="text" placeholder="Email Address" required>
+                <input type="email" placeholder="Email Address" class="email" required>
               </div>
               <div class="field">
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" class="password" required>
               </div>
               <div class="pass-link"><a href="#">Forgot password?</a></div>
               <div class="field btn">
                 <div class="btn-layer"></div>
                 <input type="submit" value="Login">
               </div>
-              <div class="signup-link">Not a member? <a href="">Signup now</a></div>
+              <div class="signup-link">Not a Donor? <a href="./donor_registration.html">Signup now</a></div>
             </form>
-            <form action="#" class="signup">
+
+            <!-- hospital login----------------- -->
+
+
+            <form action="#" class="hospital_login login">
+              <div class="field">
+                <input type="email" placeholder="Email Address"  class="email" required>
+              </div>
+              <div class="field">
+                <input type="password" placeholder="Password" class="password" required>
+              </div>
+              <div class="pass-link"><a href="#">Forgot password?</a></div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Login">
+              </div>
+              <div class="signup-link">Not registered hospital? <a href="./hospital_registration.html">Signup now</a></div>
+            </form>
+
+            <!-- <form action="#" class="signup">
               <div class="field">
                 <input type="text" placeholder="Email Address" required>
               </div>
@@ -51,7 +71,7 @@
                 <div class="btn-layer"></div>
                 <input type="submit" value="Signup">
               </div>
-            </form>
+            </form> -->
           </div>
         </div>
       </div>
@@ -62,7 +82,7 @@
       const loginForm = document.querySelector("form.login");
       const loginBtn = document.querySelector("label.login");
       const signupBtn = document.querySelector("label.signup");
-      const signupLink = document.querySelector("form .signup-link a");
+      // const signupLink = document.querySelector("form .signup-link a");
       signupBtn.onclick = (()=>{
         loginForm.style.marginLeft = "-50%";
         loginText.style.marginLeft = "-50%";
@@ -71,10 +91,89 @@
         loginForm.style.marginLeft = "0%";
         loginText.style.marginLeft = "0%";
       });
-      signupLink.onclick = (()=>{
-        signupBtn.click();
-        return false;
-      });
+      // signupLink.onclick = (()=>{
+      //   signupBtn.click();
+      //   return false;
+      // });
+      let donor_login =document.querySelector(".donor_login")
+      donor_login.addEventListener("submit",e=>{
+        let email = document.querySelectorAll(".email")
+        let password = document.querySelectorAll(".password")
+
+        let email_value = email[0].value
+        let password_value = password[0].value
+        let donor_details= JSON.parse(localStorage.getItem("donor_details"))
+        let active_user;
+        let check =0
+        donor_details.forEach(e => {
+          // console.log(email_value,password);
+
+          if(e["emailid"]==email_value&&e["password"]==password_value){
+            active_user=e
+            console.log(active_user);
+            localStorage.setItem("active_user",JSON.stringify(active_user))
+            localStorage.setItem("status","donor")
+            console.log("gdfb x");
+            return check=1
+            // alert("Login Successful")
+          }
+        
+        });
+        if(check==1){
+          window.location.href = "../index.html"
+
+            alert("Login Successful")
+          }
+          else{
+            alert("Incorrect email or password")
+            console.log("efcd");
+            
+
+          }
+      })
+
+
+      let hospital_login =document.querySelector(".hospital_login")
+
+
+      //  Hospital login---------------------
+      hospital_login.addEventListener("submit",e=>{
+        let email = document.querySelectorAll(".email")
+        let password = document.querySelectorAll(".password")
+        console.log("dfvwdfv");
+
+        let email_value = email[1].value
+        let password_value = password[1].value
+        let hospital_details= JSON.parse(localStorage.getItem("hospital_details"))
+        let active_user;
+        let check =0
+        console.log(email_value,password_value);
+
+        hospital_details.forEach(e => {
+          console.log("fdec");
+
+          if(e["gmail"]==email_value&&e["password"]==password_value){
+            active_user=e["gmail"]
+            // console.log(active_user);
+            localStorage.setItem("active_hospital",e["gmail"])
+            localStorage.setItem("status","hospital")
+
+            return check=1
+
+          }
+        
+        });
+        if(check==1){
+          window.location.href = "../index.html"
+
+            alert("Login Successful")
+          }
+          else{
+            alert("Incorrect email or password")
+            
+
+          }
+      })
 
 </script>
 </html>

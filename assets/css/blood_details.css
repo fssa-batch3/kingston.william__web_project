@@ -55,3 +55,7 @@ body{
 .details span{
     width: 35%;
 }
+#donor_profile{
+    width: 250px;
+    margin:  50px;
+}

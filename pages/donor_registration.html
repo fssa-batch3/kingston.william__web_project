@@ -73,8 +73,8 @@
                  </div>
  
                  <div class="input-field">
-                     <label>Nationality</label>
-                     <input type="text" pattern="[A-Za-z]{2,32}" id="nation" placeholder="Enter your Nationality" required>
+                     <label>Age</label>
+                     <input type="number" pattern="[0-9]{2,32}" id="age" placeholder="Enter your age" required>
                  </div>
  
                  <div class="input-field">
@@ -146,11 +146,18 @@
         form.addEventListener("submit",submit)
         function submit(e) {
             e.preventDefault()
-          const fullname = document.getElementById("fullname").value;
           const dob =document.getElementById("dob").value
-          const emailid = document.getElementById("emailid").value;
-          const phnum = document.getElementById("phnum").value;
-          const gendermf = document.getElementById("gendermf").value;
+          console.log(dob);
+          let dob_year=2023- dob.slice(0,4)
+            console.log(dob_year)
+
+          const age = document.getElementById("age").value;
+          if(age==dob_year||age==(dob_year-1)){
+            if(age>17&& age<60){
+          const fullname = document.getElementById("fullname").value.trim();
+          const emailid = document.getElementById("emailid").value.trim();
+          const phnum = document.getElementById("phnum").value.trim();
+          const gendermf = document.getElementById("gendermf").value.trim();
           let donated_before = document.getElementById("donated_before")
           if (donated_before.checked) {
             donated_before= "yes"
@@ -158,12 +165,11 @@
           else{
             donated_before="no"
           }
-          const occupation= document.getElementById("occup").value;
-          const address= document.getElementById("add").value;
-          const nationality = document.getElementById("nation").value;
-          const state=document.getElementById("state").value;
-          const district = document.getElementById("dist").value;
-          const bloodgroup = document.getElementById("blood").value;
+          const occupation= document.getElementById("occup").value.trim();
+          const address= document.getElementById("add").value.trim();
+          const state=document.getElementById("state").value.trim();
+          const district = document.getElementById("dist").value.trim();
+          const bloodgroup = document.getElementById("blood").value.trim();
 
           let diseased_before = document.getElementById("diseased_before")
           if (diseased_before.checked) {
@@ -172,10 +178,10 @@
           else{
             diseased_before="no"
           }
-          const disease_name =document.getElementById("disease_name").value
+          const disease_name =document.getElementById("disease_name").value.trim()
 
-          let password =document.getElementById("password").value
-          let cpassword =document.getElementById("cpassword").value
+          let password =document.getElementById("password").value.trim()
+          let cpassword =document.getElementById("cpassword").value.trim()
 
           if (password==cpassword) {
             let donor_details = JSON.parse(localStorage.getItem("donor_details"))?? []
@@ -188,7 +194,7 @@
                 "donated_before":donated_before,
                 "occupation":occupation,
                 "address":address,
-                "nationality":nationality,
+                age,
                 "state":state,
                 "district":district,
                 "bloodgroup":bloodgroup,
@@ -198,13 +204,23 @@
             }
             donor_details.push(donor_detail)
             localStorage.setItem("donor_details",JSON.stringify(donor_details))
-            localStorage.setItem("status","donor")
-              window.location.href = "./login.html";
+            // localStorage.setItem("status","donor")
+              window.location.href = "./new_login.html";
 
           }
           else{
             alert("password and confirm password doesn't match")
           }
+}
+else{
+alert("Your Age should be between 18 and 60")
+}
+     
+          }
+          else{
+alert("The Date of Birth and Age is Irrelavant")
+          }
+   
     
         }
       </script>

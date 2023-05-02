@@ -7,7 +7,7 @@ let occupation =document.getElementById("occupation")
 let blood_group =document.getElementById("blood_group")
 let address =document.getElementById("address")
 let state =document.getElementById("state")
-let nationality =document.getElementById("nationality")
+let age =document.getElementById("age")
 let district =document.getElementById("district")
 let diseased_before =document.getElementById("diseased_before")
 let donated_before =document.getElementById("donated_before")
@@ -23,7 +23,7 @@ gender.innerHTML = active_user["gendermf"]
 donated_before.innerHTML = active_user["donated_before"]
 occupation.innerHTML = active_user["occupation"]
 address.innerHTML = active_user["address"]
-nationality.innerHTML = active_user["nationality"]
+age.innerHTML = active_user["age"]
 state.innerHTML = active_user["state"]
 district.innerHTML = active_user["district"]
 blood_group.innerHTML = active_user["bloodgroup"]
@@ -46,15 +46,15 @@ edit_button.addEventListener("click",e=>{
   </div>
   <div class="detail">
     <p>Date of Birth</p>
-    <input id="dob">
+    <input id="dob" disabled>
   </div> 
   <div class="detail">
     <p>Email id</p>
-    <input id="email_id" readonly>
+    <input id="email_id" disabled>
   </div>
    <div class="detail">
     <p>Gender</p>
-    <input id="gender">
+    <input id="gender" disabled>
   </div>
    <div class="detail">
     <p>Phone number</p>
@@ -66,7 +66,7 @@ edit_button.addEventListener("click",e=>{
   </div>  
   <div class="detail">
     <p>Blood group</p>
-    <input id="blood_group">
+    <input id="blood_group" disabled>
   </div> 
    <div class="detail">
     <p>Address</p>
@@ -81,16 +81,16 @@ edit_button.addEventListener("click",e=>{
     <input id="state">
   </div> 
   <div class="detail">
-    <p>Nationality</p>
-    <input id="nationality">
+    <p>Age</p>
+    <input id="age" disabled>
   </div> 
   <div class="detail">
     <p> Diseased before ?</p>
-    <input id="diseased_before">
+    <input id="diseased_before" disabled>
   </div> 
    <div class="detail">
     <p>Have you Donated blood before</p>
-    <input id="donated_before">
+    <input id="donated_before" >
   </div>`
   let full_name =document.getElementById("full_name")
   let dob =document.getElementById("dob")
@@ -101,7 +101,7 @@ edit_button.addEventListener("click",e=>{
   let blood_group =document.getElementById("blood_group")
   let address =document.getElementById("address")
   let state =document.getElementById("state")
-  let nationality =document.getElementById("nationality")
+  let age =document.getElementById("age")
   let district =document.getElementById("district")
   let diseased_before =document.getElementById("diseased_before")
   let donated_before =document.getElementById("donated_before")
@@ -115,7 +115,7 @@ gender.value = active_user["gendermf"]
 donated_before.value = active_user["donated_before"]
 occupation.value = active_user["occupation"]
 address.value = active_user["address"]
-nationality.value = active_user["nationality"]
+age.value = active_user["age"]
 state.value = active_user["state"]
 district.value = active_user["district"]
 blood_group.value = active_user["bloodgroup"]
@@ -134,7 +134,7 @@ let occupation =document.getElementById("occupation")
 let blood_group =document.getElementById("blood_group")
 let address =document.getElementById("address")
 let state =document.getElementById("state")
-let nationality =document.getElementById("nationality")
+let age =document.getElementById("age")
 let district =document.getElementById("district")
 let diseased_before =document.getElementById("diseased_before")
 let donated_before =document.getElementById("donated_before")
@@ -152,7 +152,7 @@ let ref = active_user["fullname"]
     active_user["donated_before"] = donated_before.value
     active_user["occupation"] = occupation.value
      active_user["address"] = address.value 
-    active_user["nationality"] = nationality.value
+    active_user["age"] = age.value
     active_user["state"] = state.value
    active_user["district"] =district.value 
    active_user["bloodgroup"] = blood_group.value 

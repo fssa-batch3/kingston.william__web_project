@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/blood_details.css">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+     <!--navbar-->
+     <header>
+        <nav>
+           <div class="nav1"><img src="../assets/img/Donor_logo.png" alt="logo" />
+           <ul class="nav-links">
+             <li class="active"><a href="../index.html">Home</a></li>
+             <li><a href="#">Blood Availability</a></li>
+             <li><a href="donor_availability.html">Donor Availability</a></li>
+             <li id="register"><a href="pages/registration.html" >Register</a></li>
+             <li><span href="" id="profile_page">Profile</span></li>
+         </div>
+           <div class="login_signup">
+             <button>Signup</button>
+             <button>Login</button>
+           </div>
+         </nav>
+       </header>
+       <body>
+       <div class="main_container">
+<img src="../assets/img/profile_image.jpg" alt="">
+  
+       </div>
+       </body>
+       <script>
+
+        // get url from search bar
+        const url = window.location.search;
+        console.log(url,"url");
+        const urlParams = new URLSearchParams(url);
+        console.log(urlParams,"urlparams");
+        const donor_email = urlParams.get("name")
+        console.log(donor_email);
+        
+        let donor_details = JSON.parse(localStorage.getItem("donor_details"))
+        let index_value
+        donor_details.forEach((e,index) => {
+          if(e["emailid"]==donor_email){
+            index_value = index
+          }
+        })
+        console.log(index_value,"index");
+        
+              let main_container = document.querySelector(".main_container")
+                main_container.innerHTML=
+                
+                `
+                 <div class="container_left">
+                  <h1>${donor_details[index_value]["fullname"]}</h1>
+                  <h3 ><span id="grey">24*7 Service</span> </h3>
+                    <img src="../assets/img/profile_image.jpg" id="donor_profile" alt="hospital img"/>
+                </div>
+                <div class="container_right">
+                   <div class="details_list">
+
+                    <div class="details">
+                      <p>Full name</p>
+                      <span>${donor_details[index_value]["fullname"]}</span>
+                    </div>
+
+                    <div class="details">
+                      <p>Gender</p>
+                      <span>${donor_details[index_value]["gendermf"]}</span>
+                    </div>
+
+                    <div class="details">
+                      <p>Date of Birth</p>
+                      <span>${donor_details[index_value]["dob"]}</span>
+                    </div>
+
+                    <div class="details">
+                      <p>Email</p>
+                      <span>${donor_details[index_value]["emailid"]}</span>
+                    </div>
+
+                    <div class="details">
+                      <p>Blood Group</p>
+                      <span>${donor_details[index_value]["bloodgroup"]}</span>
+                    </div>
+
+                    <div class="details">
+                      <p>Occupation</p>
+                      <span>${donor_details[index_value]["occupation"]}</span>
+                    </div>
+
+                    <div class="details">
+                      <p>Mobile Number</p>
+                      <span>${donor_details[index_value]["phnum"]}</span>
+                    </div>
+
+
+                    <div class="details">
+                      <p>Address</p>
+                      <span>${donor_details[index_value]["address"]}</span>
+                    </div>
+
+
+                    <div class="details">
+                      <p>District</p>
+                      <span>${donor_details[index_value]["district"]}</span>
+                    </div>
+
+                    <div class="details">
+                      <p>State</p>
+                      <span>${donor_details[index_value]["state"]}</span>
+                    </div>
+
+                    <div class="details">
+                      <p>Age</p>
+                      <span>${donor_details[index_value]["age"]}</span>
+                    </div>
+
+                    <div class="details">
+                      <p>Diseased Before </p>
+                      <span>${donor_details[index_value]["diseased_before"]}</span>
+                    </div>
+
+                   </div>
+                </div>`
+        
+                let status= localStorage.getItem("status")
+          let login_signup =document.querySelector(".login_signup")
+          // let donate_get_blood_div = document.querySelector(".donate_get_blood")
+          let register = document.querySelector("#register")
+        
+          if(status){
+            register.classList.add("not_view")
+            login_signup.classList.add("not_view")
+          }
+          
+        
+               </script>
+       <script src="../assets/js/common.js"></script>
+       </html>

@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/blood_details.css">
     <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
 </head>
 
      <!--navbar-->
@@ -17,8 +18,8 @@
              <li class="active"><a href="../index.html">Home</a></li>
              <li><a href="#">Blood Availability</a></li>
              <li><a href="donor_availability.html">Donor Availability</a></li>
-             <li><a href="pages/registration.html">Register</a></li>
-             <li><a href="pages/profile.html" id="profile_page">Profile</a></li>
+             <li id="register"><a href="pages/registration.html" >Register</a></li>
+             <li><span href="" id="profile_page">Profile</span></li>
          </div>
            <div class="login_signup">
              <button>Signup</button>
@@ -100,5 +101,18 @@ hospital_details.forEach((e,index) => {
           </div>
            </div>
         </div>`
+
+        let status= localStorage.getItem("status")
+  let login_signup =document.querySelector(".login_signup")
+  // let donate_get_blood_div = document.querySelector(".donate_get_blood")
+  let register = document.querySelector("#register")
+
+  if(status){
+    register.classList.add("not_view")
+    login_signup.classList.add("not_view")
+  }
+  
+
        </script>
+       <script src="../assets/js/common.js"></script>
        </html>

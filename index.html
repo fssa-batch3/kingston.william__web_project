@@ -18,12 +18,12 @@
           <li class="active"><a href="">Home</a></li>
           <li><a href="pages/blood_availability.html">Blood Availability</a></li>
           <li><a href="pages/donor_availability.html">Donor Availability</a></li>
-          <li><a href="pages/donor_registration.html">Register</a></li>
+          <li id="register"><a href="pages/donor_registration.html">Register</a></li>
           <li><span href="" id="profile_page">Profile</span></li>
       </div>
         <div class="login_signup">
           <!-- <a href="pages/registrationTwo.html"><button>Signup</button></a> -->
-          <a href="pages/login.html"><button>Login</button></a>
+          <a href="./pages/new_login.html"><button>Login</button></a>
         </div>
       </nav>
     </header>
@@ -226,10 +226,15 @@
   let status= localStorage.getItem("status")
   let login_signup =document.querySelector(".login_signup")
   let donate_get_blood_div = document.querySelector(".donate_get_blood")
+  let register = document.querySelector("#register")
+  
   if(status){
     donate_get_blood_div.classList.add("not_view")
     login_signup.classList.add("not_view")
+    register.classList.add("not_view")
+
   }
+  
   let profile_page =document.getElementById("profile_page")??""
 let local_status =localStorage.getItem("status")
 console.log(local_status);
@@ -250,5 +255,6 @@ profile_page.addEventListener("click",e=>{
 })
 // localStorage.setItem("status","donor")
 </script>
+
 <script src="./assets/js/main.js"></script>
 </html>

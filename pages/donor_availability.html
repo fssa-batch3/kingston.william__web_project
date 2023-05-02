@@ -21,7 +21,7 @@
          <li><a href="/pages/blood_availability.html">Blood Availability</a></li>
          <li><a href="/pages/donor_availability.html">Donor Availability</a></li>
          <li id="register"><a href="/pages/donor_registration.html">Register</a></li>
-         <li><a href="/pages/donor_profile.html" id="profile_page">Profile</a></li>
+         <li><span  id="profile_page">Profile</span></li>
      </div>
        <div class="login_signup">
          <!-- <a href="pages/registrationTwo.html"><button>Signup</button></a> -->
@@ -94,22 +94,20 @@
     <p>madurai</p>
   </a> -->
 </div>
-<script src="../assets/js/common.js"></script>
+
 
 <script>
   let donor_details=JSON.parse(localStorage.getItem("donor_details"))
   let main_cont =document.querySelector(".main_cont")
 
-
   for (let i = 0; i < donor_details.length; i++) {
     main_cont.innerHTML+=`
-     <a href="./donor_details.html?name=${donor_details[i]["donor_name"]}" class="cont_content">
+     <a href="./donor_details.html?name=${donor_details[i]["emailid"]}" class="cont_content">
     <img src="../assets/img/profile_image.jpg" alt="donor img" />
-    <p><span>${donor_details[i]["donor_name"]}</span></p>
-    <p>${donor_details[i]["donor_address"]} ${donor_details[i]["district"]}</p>
+    <p><span>${donor_details[i]["fullname"]}</span></p>
+    <p>${donor_details[i]["address"]} ${donor_details[i]["district"]}</p>
   </a>
     `
-    // `dscnjjczjz ${jnwcnc}`
   }
 </script>
 <script>
@@ -139,9 +137,6 @@
       }
     })
   });
-  // array.forEach(element => {
-  //   king
-  // });
 
   
 let _status= localStorage.getItem("status")
@@ -152,5 +147,6 @@ if(_status){
   login_signup.classList.add("not_view")
 }
 </script>
+<script src="../assets/js/common.js"></script>
 </html>
 </html>
