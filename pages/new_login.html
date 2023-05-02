@@ -97,6 +97,8 @@
       // });
       let donor_login =document.querySelector(".donor_login")
       donor_login.addEventListener("submit",e=>{
+        e.preventDefault()
+
         let email = document.querySelectorAll(".email")
         let password = document.querySelectorAll(".password")
 
@@ -121,8 +123,8 @@
         });
         if(check==1){
           window.location.href = "../index.html"
+          alert("Login Successful")
 
-            alert("Login Successful")
           }
           else{
             alert("Incorrect email or password")
@@ -138,6 +140,7 @@
 
       //  Hospital login---------------------
       hospital_login.addEventListener("submit",e=>{
+        e.preventDefault()
         let email = document.querySelectorAll(".email")
         let password = document.querySelectorAll(".password")
         console.log("dfvwdfv");
@@ -164,9 +167,10 @@
         
         });
         if(check==1){
+          alert("Login Successful")
+
           window.location.href = "../index.html"
 
-            alert("Login Successful")
           }
           else{
             alert("Incorrect email or password")
