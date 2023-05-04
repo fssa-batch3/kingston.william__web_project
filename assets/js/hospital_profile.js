@@ -7,6 +7,7 @@ let district =document.getElementById("district")
 let area_pincode =document.getElementById("area_pincode")
 let hospital_licence =document.getElementById("hospital_licence")
 let hospital_renew =document.getElementById("hospital_renew")
+let hospital_type =document.getElementById("hospital_type")
 
 let  hospital_details=JSON.parse( localStorage.getItem("hospital_details"))
 let active_hospital = localStorage.getItem("active_hospital")
@@ -26,6 +27,7 @@ blood_group.innerHTML = hospital_data["bloodgroup"]
 address.innerHTML = hospital_data["hospital_address"]
 area_pincode.innerHTML= hospital_data["pincode"]
 district.innerHTML = hospital_data["district"]
+hospital_type.innerHTML= hospital_data["hospitaltype"]
 // console.log( hospital_data["district"]);
  
 let save_button = document.getElementById("save_button")
@@ -42,32 +44,36 @@ edit_button.addEventListener("click",e=>{
     <input id="hospital_name">
   </div>
   <div class="detail">
-    <p>Hospital Renew Year</p>
-    <input id="hospital_renew">
-  </div> 
-  <div class="detail">
-    <p>Email id</p>
-    <input id="email_id" readonly>
-  </div>
-   <div class="detail">
+  <p>Email id</p>
+  <input id="email_id" readonly>
+</div>
+<div class="detail">
     <p>Phone number</p>
     <input id="ph_no">
   </div>
-   <div class="detail">
-    <p>Address</p>
-    <input id="address">
-  </div>
+  <div class="detail">
+  <p>Hospital Type</p>
+  <input id="hospital_type">
+</div> 
+  <div class="detail">
+    <p>Hospital Renew Year</p>
+    <input id="hospital_renew">
+  </div> 
   <div class="detail">
     <p>District</p>
     <input id="district">
   </div>
   <div class="detail">
-    <p>Area Pincode</p>
-    <input id="area_pincode">
-  </div> 
-  <div class="detail">
-    <p>Hospital License</p>
-    <input id="hospital_licence">
+  <p>Area Pincode</p>
+  <input id="area_pincode">
+</div> 
+<div class="detail">
+<p>Hospital License</p>
+<input id="hospital_licence">
+</div>
+   <div class="detail">
+    <p>Address</p>
+    <input id="address">
   </div>
   <div class="detail">
     <p>Blood group</p>
@@ -82,6 +88,7 @@ let district =document.getElementById("district")
 let area_pincode =document.getElementById("area_pincode")
 let hospital_licence =document.getElementById("hospital_licence")
 let hospital_renew =document.getElementById("hospital_renew")
+let hospital_type =document.getElementById("hospital_type")
  
  
 hospital_name.value = hospital_data["hospital_name"]
@@ -93,6 +100,7 @@ blood_group.value = hospital_data["bloodgroup"]
 address.value = hospital_data["hospital_address"]
 area_pincode.value= hospital_data["pincode"]
 district.value = hospital_data["district"]
+hospital_type.value = hospital_data["hospitaltype"]
 console.log(hospital_data);
 save_button.addEventListener("click",saveDetails)
 })
@@ -108,6 +116,7 @@ function saveDetails(){
   let area_pincode =document.getElementById("area_pincode")
   let hospital_licence =document.getElementById("hospital_licence")
   let hospital_renew =document.getElementById("hospital_renew")
+  let hospital_type =document.getElementById("hospital_type")
   let hospital_data =localStorage.getItem("active_hospital")
   let hospital_details = JSON.parse(localStorage.getItem("hospital_details"))
   let ref = hospital_data
@@ -129,6 +138,7 @@ hospital_data ={}
   hospital_data["hospital_address"] = address.value
   hospital_data["district"] =district.value  
   hospital_data["pincode"] = area_pincode.value
+  hospital_data["hospitaltype"] = hospital_type.value
   
 
 

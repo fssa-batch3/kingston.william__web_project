@@ -63,7 +63,7 @@
                  
           <span class="input-field">
           <label for="Hospital Type">Hospital Type</label>
-          <input type="text" id="Hospital Type" required/>
+          <input type="text" id="hospitaltype" required/>
         </span>
 
         <span class="input-field">
@@ -118,7 +118,7 @@
             e.preventDefault()
 
 
-            let hospital_name = document.getElementById("hospital_name").value
+        let hospital_name = document.getElementById("hospital_name").value
         let district = document.getElementById("district").value
         let hospital_address = document.getElementById("hospital_address").value
         let pincode = document.getElementById("pincode").value
@@ -132,6 +132,7 @@
         let gmail= document.getElementById("gmail").value
         let password =document.getElementById("password").value
         let con_password =document.getElementById("con_password").value
+        let hospitaltype =document.getElementById("hospitaltype").value
 
 
 if(password==con_password){
@@ -156,15 +157,16 @@ if(password==con_password){
             "total_blood_avail":total_blood_avail,
             "hosp_license":hosp_license,
             "hospital_renew":hospital_renew,
+            hospitaltype,
             gmail,
             password
         }
-        localStorage.setItem("active_hospital",gmail)
+        // localStorage.setItem("active_hospital",gmail)
         hospital_detail.push(hospital_data)
         localStorage.setItem("hospital_details",JSON.stringify(hospital_detail))
         // localStorage.setItem("status","hospital")
 
-          window.location.href="./blood_availability.html"
+          window.location.href="./new_login.html"
 
         }
       else{
