@@ -92,3 +92,18 @@
   border: 1px solid black;
   justify-content: center;
 }
+#district{
+  height: 32px;
+  width:200px;
+  border-radius: 5px;
+}
+#blood_group_avail{
+  height: 30px;
+  width:170px;
+}
+#label-content{
+position: absolute;
+top:450px;
+left:250px;
+
+}

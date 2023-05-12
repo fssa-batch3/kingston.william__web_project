@@ -44,37 +44,69 @@
       <h1>BLOOD AVAILABLE HOSPITALS</h1>
   </div>
       <form>
-          
-          <select>
+          <h3>Sort by</h3>
+          <select id ="state">
               <option value="state">TAMIL NADU</option>
           </select>
           
-          <select id ="state">
+          <select id ="district">
               <option >Select District</option>
-              <option >CHENNAI</option>
-              <option >COIMBATORE</option>
-              <option >ARIYALUR</option>
-              <option >MADURAI</option>
-              <option >TIRUNELVELI</option>
-              <option >THANJAVUR</option>
+              <option >Ariyalur</option>
+              <option >Chennai</option>
+              <option >Coimbatore</option>
+              <option >Chengalpattu</option>
+              <option >Cuddalore</option>
+              <option >Dharmapuri</option>
+              <option >Dindigul</option>
+              <option >Erode</option>
+              <option >Kallakurichi</option>
+              <option >Kancheepuram</option>
+              <option >Karur</option>
+              <option >Krishnagiri</option>
+              <option >Madurai</option>
+              <option >Mayiladuthurai</option>
+              <option >Nagapattinam</option>
+              <option >Nagercoil</option>
+              <option >Namakkal</option>
+              <option >Perambalur</option>
+              <option >Pudukkottai</option>
+              <option >Ramanathapuram</option>
+              <option >Ranipet</option>
+              <option >Salem</option>
+              <option >Sivagangai</option>
+              <option >Tenkasi</option>
+              <option >Thanjavur</option>
+              <option >Theni</option>
+              <option >Thiruvallur</option>
+              <option >Thiruvarur</option>
+              <option >Thoothukudi</option>
+              <option >Trichirappalli</option>
+              <option >Thirunelveli</option>
+              <option >Tirupathur</option>
+              <option >Tiruppur</option>
+              <option >Tiruvannamalai</option>
+              <option >The Nilgiris</option>
+              <option >Vellore</option>
+              <option >Viluppuram</option>
+              <option >Virudhunagar</option>
           </select>
        
-          <select >
-              <option value="district">Select Blood Group</option>
-              <option value="district">AB-ve</option>
-              <option value="district">AB+ve</option>
-              <option value="district">A-ve</option>
-              <option value="district">B-ve</option>
-              <option value="district">B+ve</option>
-              <option value="district">Oh-VE</option>
-              <option value="district">Oh+VE</option>
-              <option value="district">O-Ve</option>
-              <option value="district">O+Ve</option>
-              <option value="district">All Blood Groups</option>
+          <select id="select_blood_group" >
+              <option >Select Blood Group</option>
+              <option >AB-ve</option>
+              <option >AB+ve</option>
+              <option>A-ve</option>
+              <option>A+ve</option>
+              <option >A+ve</option>
+              <option >B-ve</option>
+              <option >B+ve</option>
+              <option >O-ve</option>
+              <option >O+ve</option>
+              <option >All Blood Groups</option>
           </select>
          
           
-          <select id ="state">
+          <!-- <select id ="state">
               <option value="district">Components of Blood</option>
               <option value="district">single donor platelet</option>
               <option value="district">single donor plasma</option>
@@ -86,9 +118,9 @@
               <option value="district">packed red blood cells</option>
               <option value="district">Leukoreduced Rbc</option>
               <option value="district">fresh frozen plasma</option>
-          </select>
+          </select> -->
       </form>
-      <a href="list.html">Submit</a>
+      <a  id="submit">Submit</a>
   </div>
 </div>
 </div>
@@ -103,28 +135,32 @@
   </a> -->
 </div>
   </body>
+<script src="../assets/js/common.js"></script>
+
   <script>
     let hospital_detail=JSON.parse(localStorage.getItem("hospital_details"))
     let main_cont =document.querySelector(".main_cont")
 
-
+let district=[]
     for (let i = 0; i < hospital_detail.length; i++) {
-      main_cont.innerHTML+=`
+      main_cont.innerHTML+=` 
        <a href="./hospital_details.html?name=${hospital_detail[i]["hospital_name"]}" class="cont_content">
       <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
       <p><span>${hospital_detail[i]["hospital_name"]}</span></p>
       <p>${hospital_detail[i]["hospital_address"]} ${hospital_detail[i]["district"]}</p>
     </a>
       `
+      district.push(hospital_detail[i]["district"])
+
+      console.log(hospital_detail[i]["district"]);
+
+
       // `dscnjjczjz ${jnwcnc}`
     }
-  </script>
-<script src="../assets/js/common.js"></script>
+    console.log(district);
 
-  <script>
     let place=document.getElementById("state")
     let option=document.getElementsByTagName("option")
-
     let selectedValue;
     let selvalue;
     place.addEventListener("change", (event) => {
@@ -148,7 +184,6 @@
         }
       })
     });
-
     let status= localStorage.getItem("status")
   let login_signup =document.querySelector(".login_signup")
   let register = document.querySelector("#register")
@@ -156,6 +191,32 @@
     register.classList.add("not_view")
     login_signup.classList.add("not_view")
   }
+
+// filtering the districts-----------------
+
+
+
+// console.log(select_blood_group,"uyt");
+
+let submit = document.getElementById("submit")
+submit.addEventListener("click",e=>{
+  let district_value = document.getElementById("district").value
+let select_blood_group = document.getElementById("select_blood_group").value
+main_cont.innerHTML=""
+  for (let i = 0; i < hospital_detail.length; i++) {
+    if(hospital_detail[i]["district"]==district_value && (select_blood_group==hospital_detail[i]["total_blood_avail"][0]["blood_group_avail"] || select_blood_group==hospital_detail[i]["total_blood_avail"][1]["blood_group_avail"]||select_blood_group==hospital_detail[i]["total_blood_avail"][2]["blood_group_avail"]) ){
+      main_cont.innerHTML+=` 
+       <a href="./hospital_details.html?name=${hospital_detail[i]["hospital_name"]}" class="cont_content">
+      <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
+      <p><span>${hospital_detail[i]["hospital_name"]}</span></p>
+      <p>${hospital_detail[i]["hospital_address"]} ${hospital_detail[i]["district"]}</p>
+    </a>
+      `
+    }
+    }
+    
+})
+
 
   </script>
   </html>

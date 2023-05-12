@@ -21,9 +21,55 @@
           </span>
 
           <span class="input-field">
+            <label>District</label>
+            <select id ="district">
+                <option >Select</option>
+                <option >Ariyalur</option>
+                <option >Chennai</option>
+                <option >Coimbatore</option>
+                <option >Chengalpattu</option>
+                <option >Cuddalore</option>
+                <option >Dharmapuri</option>
+                <option >Dindigul</option>
+                <option >Erode</option>
+                <option >Kallakurichi</option>
+                <option >Kancheepuram</option>
+                <option >Karur</option>
+                <option >Krishnagiri</option>
+                <option >Madurai</option>
+                <option >Mayiladuthurai</option>
+                <option >Nagapattinam</option>
+                <option >Nagercoil</option>
+                <option >Namakkal</option>
+                <option >Perambalur</option>
+                <option >Pudukkottai</option>
+                <option >Ramanathapuram</option>
+                <option >Ranipet</option>
+                <option >Salem</option>
+                <option >Sivagangai</option>
+                <option >Tenkasi</option>
+                <option >Thanjavur</option>
+                <option >Theni</option>
+                <option >Thiruvallur</option>
+                <option >Thiruvarur</option>
+                <option >Thoothukudi</option>
+                <option >Trichirappalli</option>
+                <option >Thirunelveli</option>
+                <option >Tirupathur</option>
+                <option >Tiruppur</option>
+                <option >Tiruvannamalai</option>
+                <option >The Nilgiris</option>
+                <option >Vellore</option>
+                <option >Viluppuram</option>
+                <option >Virudhunagar</option>
+            </select>
+          </span>
+
+
+          <!-- <span class="input-field">
             <label for="district">District</label>
             <input type="text" pattern="[A-Za-z]{2,32}" id="district" required />
-          </span>
+          </span> -->
 
           <span class="input-field">
             <label for="hospital_address">Address</label>
@@ -46,10 +92,6 @@
           </span>
         </div>
         <div class="input_fields">
-
-    
-
-
           <span class="input-field">
             <label for="hosp_license">Hospital License</label>
             <input type="text" id="hosp_license" required/>
@@ -80,26 +122,69 @@
 
         
         </div>
+        <!-- <div class="input-fields">
+          <span class="input-field">
+          <label for="blood_group_avail"> Blood Group Availability</label> -->
+         
         <div class="input_fields">
           <span class="input-field">
-            <label for="blood_group_avail">  Blood Group Availability</label>  
+            <label for="blood_group_avail" id="label-content">Blood Group Availability</label>  
             <p>1.</p> 
-          <input type="text" id="blood_group_avail" class="blood_group_avail" required/>
+          <!-- <input type="text" id="blood_group_avail" class="blood_group_avail" required/> -->
+          <select id ="blood_group_avail" class="blood_group_avail">
+            <option>Select Blood Group</option>
+            <option>AB-ve</option>
+            <option>AB+ve</option>
+            <option>A-ve</option>
+            <option>A+ve</option>
+            <option>B-ve</option>
+            <option>B+ve</option>
+            <option>O-ve</option>
+            <option>O+ve</option>
+            <option>All Blood Groups</option>
+        </select>
+        <p>Unit</p>
           <input type="number"  pattern="[0-9]{10}" id="blood_stock_avail" class="blood_stock_avail" required/>
         </span>
         <span class="input-field">
           <p>2.</p>
-          <input type="text" id="blood_group_avail" class="blood_group_avail" required/>
+          <!-- <input type="text" id="blood_group_avail" class="blood_group_avail" required/> -->
+          <select id ="blood_group_avail" class="blood_group_avail">
+            <option>Select Blood Group</option>
+            <option>AB-ve</option>
+            <option>AB+ve</option>
+            <option>A-ve</option>
+            <option>A+ve</option>
+            <option>B-ve</option>
+            <option>B+ve</option>
+            <option>O-ve</option>
+            <option>O+ve</option>
+            <option>All Blood Groups</option>
+        </select>
+        <p>Unit</p>
           <input type="number" pattern="[0-9]{10}" id="blood_stock_avail" class="blood_stock_avail" required/>
         </span>
 
+        <span class="input-field">
+          <p>3.</p>
+          <!-- <input type="text" id="blood_group_avail" class="blood_group_avail" required/> -->
+          <select id ="blood_group_avail" class="blood_group_avail">
+            <option>Select Blood Group</option>
+            <option>AB-ve</option>
+            <option>AB+ve</option>
+            <option>A-ve</option>
+            <option>A+ve</option>
+            <option>B-ve</option>
+            <option>B+ve</option>
+            <option>O-ve</option>
+            <option>O+ve</option>
+            <option>All Blood Groups</option>
+        </select>
+        <p>Unit</p>
+          <input type="number" pattern="[0-9]{10}" id="blood_stock_avail" class="blood_stock_avail" required/>
+        </span>
           <!-- <button>Add a Blood group</button> -->
-       
-
-        </div>
-
-            
-
+      </div>
           <!-- </div>-->
           <div class="add_img">
             <img src="../assets/img/profile_img.png" alt="img" id="changed_photo">
@@ -107,7 +192,6 @@
           </div>
           <button type="submit" class="raised-button ">Submit</button>
         </form>
-
     </div>
     <script>
         // hospital_name
@@ -118,21 +202,22 @@
             e.preventDefault()
 
 
-        let hospital_name = document.getElementById("hospital_name").value
-        let district = document.getElementById("district").value
-        let hospital_address = document.getElementById("hospital_address").value
-        let pincode = document.getElementById("pincode").value
-        let tel_num = document.getElementById("tel_num").value
+        let hospital_name = document.getElementById("hospital_name").value.trim()
+        let district = document.getElementById("district").value.trim()
+        let hospital_address = document.getElementById("hospital_address").value.trim()
+        let pincode = document.getElementById("pincode").value.trim()
+        let tel_num = document.getElementById("tel_num").value.trim()
         let blood_group_avail = document.querySelectorAll(".blood_group_avail")
         let blood_stock_avail = document.querySelectorAll(".blood_stock_avail")
-        let hosp_license = document.getElementById("hosp_license").value
-        let hospital_renew = document.getElementById("hospital_renew").value
-        let add_image_button =document.getElementById("add_image_button").value
-        let changed_photo= document.getElementById("changed_photo").value
-        let gmail= document.getElementById("gmail").value
-        let password =document.getElementById("password").value
-        let con_password =document.getElementById("con_password").value
-        let hospitaltype =document.getElementById("hospitaltype").value
+        let hosp_license = document.getElementById("hosp_license").value.trim()
+        let hospital_renew = document.getElementById("hospital_renew").value.trim()
+        // let add_image_button =document.getElementById("add_image_button").value.trim()
+        // let changed_photo= document.getElementById("changed_photo").value.trim()
+        let gmail= document.getElementById("gmail").value.trim()
+        let password =document.getElementById("password").value.trim()
+        let con_password =document.getElementById("con_password").value.trim()
+        let hospitaltype =document.getElementById("hospitaltype").value.trim()
+        
 
 
 if(password==con_password){

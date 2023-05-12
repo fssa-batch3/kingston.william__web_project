@@ -111,7 +111,7 @@ main{
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     width: 300px;
     height: 300px;
-    margin: 50px 40px;
+    margin: 50px 90px;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -431,5 +431,4 @@ float: right;
         margin-top: 20px;
         width: 80px;
       }
-      
-
+    

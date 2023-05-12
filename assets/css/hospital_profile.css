@@ -94,12 +94,10 @@ span{
 /* #logout_button */
 #logout_button{
     width: 40px;
-    /* height:px; */
-    /* margin-left: 870px; */
     position:absolute;
     top: 65px;
     right: 150px;
-    
-    /* bottom: 130px;
-    right: 140px; */
+}
+#address{
+    height: 90px;
 }

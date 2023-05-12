@@ -47,15 +47,17 @@
 
 form {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   margin: 40px auto;
+  align-items: center;
 }
 
 form select {
   width: 300px;
   height: 40px;
   padding: 3px 8px;
+  margin: 0px 20px;
 }
 
 /* input[type="submit"] :hover {

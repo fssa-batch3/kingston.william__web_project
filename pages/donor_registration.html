@@ -37,11 +37,20 @@
                         <label>Mobile Number</label>
                         <input type="tel"id="phnum" title="Enter only numbers" pattern="[0-9]{10}" placeholder="Enter mobile number" required>
                     </div>
-
+                          
                     <div class="input-field">
                         <label>Gender</label>
+                        <select id ="gendermf">
+                            <option>Select</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                     </div>
+                    <!-- <div class="input-field">
+                        <label>Gender</label>
                         <input type="text" pattern="[A-Za-z]{2,32}" id="gendermf" placeholder="Enter your gender" required>
-                    </div>
+                    </div> -->
 
                     <div class="yesorno">
                         <p>Did you ever donate blood before?</p>
@@ -59,7 +68,7 @@
 
                     <div class="input-field">
                         <label>Occupation</label>
-                        <input type="text"id="occup" placeholder="Enter your occupation" required>
+                        <input type="text"id="occup" pattern="[A-Za-z]{2,32}" placeholder="Enter your occupation" required>
                     </div>
             </div>
             </div>
@@ -74,23 +83,83 @@
  
                  <div class="input-field">
                      <label>Age</label>
-                     <input type="number" pattern="[0-9]{2,32}" id="age" placeholder="Enter your age" required>
+                     <input type="number" pattern="[0-9]{2}" id="age" placeholder="Enter your age" required>
                  </div>
  
                  <div class="input-field">
-                     <label>State</label>
-                     <input type="text"  pattern="[A-Za-z]{2,32}" placeholder="State" id="state" required>
+                    <label>State</label>
+                    <select id ="state">
+                        <option >Select</option>
+                        <option >Tamil Nadu</option>
+                    </select>
                  </div>
+                     <!-- <label>State</label>
+                     <input type="text"  pattern="[A-Za-z]{2,32}" placeholder="State" id="state" required>
+                 </div> -->
  
                  
                      <div class="input-field">
-                         <label>District</label>
-                         <input type="text"  pattern="[A-Za-z]{2,32}" id="dist" placeholder="Enter your District" required>
+                        <label>District</label>
+                        <select id ="dist" >
+                            <option >Select</option>
+                            <option >Ariyalur</option>
+                            <option >Chennai</option>
+                            <option >Coimbatore</option>
+                            <option >Chengalpattu</option>
+                            <option >Cuddalore</option>
+                            <option >Dharmapuri</option>
+                            <option >Dindigul</option>
+                            <option >Erode</option>
+                            <option >Kallakurichi</option>
+                            <option >Kancheepuram</option>
+                            <option >Karur</option>
+                            <option >Krishnagiri</option>
+                            <option >Madurai</option>
+                            <option >Mayiladuthurai</option>
+                            <option >Nagapattinam</option>
+                            <option >Nagercoil</option>
+                            <option >Namakkal</option>
+                            <option >Perambalur</option>
+                            <option >Pudukkottai</option>
+                            <option >Ramanathapuram</option>
+                            <option >Ranipet</option>
+                            <option >Salem</option>
+                            <option >Sivagangai</option>
+                            <option >Tenkasi</option>
+                            <option >Thanjavur</option>
+                            <option >Theni</option>
+                            <option >Thiruvallur</option>
+                            <option >Thiruvarur</option>
+                            <option >Thoothukudi</option>
+                            <option >Trichirappalli</option>
+                            <option >Thirunelveli</option>
+                            <option >Tirupathur</option>
+                            <option >Tiruppur</option>
+                            <option >Tiruvannamalai</option>
+                            <option >The Nilgiris</option>
+                            <option >Vellore</option>
+                            <option >Viluppuram</option>
+                            <option >Virudhunagar</option>
+                        </select>
                      </div>
  
                      <div class="input-field">
-                         <label>Blood Group</label>
-                         <input type="text" id="blood" placeholder="Enter your blood group" required>
+                        <label>Blood Group</label>
+                        <select id ="blood">
+                            <option>Select Blood Group</option>
+                            <option>AB-ve</option>
+                            <option>AB+ve</option>
+                            <option>A-ve</option>
+                            <option>A+ve</option>
+                            <option>A1+ve</option>
+                            <option>B-ve</option>
+                            <option>B+ve</option>
+                            <option>O-ve</option>
+                            <option>O+ve</option>
+                            <option>All Blood Groups</option>
+                        </select>
+                         <!-- <label>Blood Group</label>
+                         <input type="text" id="blood" placeholder="Enter your blood group" required> -->
                      </div>
 
                      <div class="yesorno">
@@ -108,8 +177,9 @@
                      </div>
  
                      <div class="input-field">
-                         <label>Disease/Allergies Name</label>
+                         <label>Disease/Allergies Name (or) None</label>
                          <input type="text" placeholder="Enter Disease name" required id="disease_name">
+                         
                      </div>
              </div>
             
@@ -159,6 +229,7 @@
           const phnum = document.getElementById("phnum").value.trim();
           const gendermf = document.getElementById("gendermf").value.trim();
           let donated_before = document.getElementById("donated_before")
+
           if (donated_before.checked) {
             donated_before= "yes"
           }
