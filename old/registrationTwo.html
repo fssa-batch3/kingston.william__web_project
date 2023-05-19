@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/registration2.css" />
+    <link rel="stylesheet" href="../assets/css/registration2.css">
 </head>
 <body>
 <form id="signup-form">
     <div class="sign_btn">
-		<p>Already a member<a href="#">sign in</a></p>
+		<p>
+Already a member<a href="#">sign in</a>
+</p>
 	</div>
 	<div class="container">
 	<div class="heading">
@@ -43,12 +45,18 @@
 			<label>phone number</label>
 			<input type="number"id="number" placeholder="Enter your email" required>
 		</div>
-		<p><span><input type="checkbox"></span>Create an account means you 're okay with our Terms of<br>
+		<p>
+<span>
+<input type="checkbox">
+</span>
+Create an account means you 're okay with our Terms of<br>
 			                                      Service,privacy policy, and our default Notification Settings.</p>
 		
 	<div>
 		<button type="submit">Sign Up</button>
-		<p><a href="login.html">Create Account</a></p>
+		<p>
+<a href="login.html">Create Account</a>
+</p>
 	</div>
 </form>
 	</div>
@@ -89,7 +97,7 @@ form.addEventListener("submit", function(event) {
 <script>
 	const form = document.getElementById("signup-form");
 
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
 	// function getData(){
 const email = document.getElementById("email").value

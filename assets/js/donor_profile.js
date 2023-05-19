@@ -1,46 +1,48 @@
-let full_name =document.getElementById("full_name")
-let dob =document.getElementById("dob")
-let email_id =document.getElementById("email_id")
-let gender =document.getElementById("gender")
-let ph_no =document.getElementById("ph_no")
-let occupation =document.getElementById("occupation")
-let blood_group =document.getElementById("blood_group")
-let address =document.getElementById("address")
-let state =document.getElementById("state")
-let age =document.getElementById("age")
-let district =document.getElementById("district")
-let diseased_before =document.getElementById("diseased_before")
-let donated_before =document.getElementById("donated_before")
+const full_name = document.getElementById("full_name");
+const dob = document.getElementById("dob");
+const email_id = document.getElementById("email_id");
+const gender = document.getElementById("gender");
+const ph_no = document.getElementById("ph_no");
+const occupation = document.getElementById("occupation");
+const blood_group = document.getElementById("blood_group");
+const address = document.getElementById("address");
+const state = document.getElementById("state");
+const age = document.getElementById("age");
+const district = document.getElementById("district");
+const diseased_before = document.getElementById("diseased_before");
+const donated_before = document.getElementById("donated_before");
+const status_check = document.getElementById("status");
 
+const active_user = JSON.parse(localStorage.getItem("active_user"));
 
-let active_user =JSON.parse( localStorage.getItem("active_user"))
+full_name.innerHTML = active_user.fullname;
+dob.innerHTML = active_user.dob;
+email_id.innerHTML = active_user.emailid;
+ph_no.innerHTML = active_user.phnum;
+gender.innerHTML = active_user.gendermf;
+donated_before.innerHTML = active_user.donated_before;
+occupation.innerHTML = active_user.occupation;
+address.innerHTML = active_user.address;
+age.innerHTML = active_user.age;
+state.innerHTML = active_user.state;
+district.innerHTML = active_user.district;
+blood_group.innerHTML = active_user.bloodgroup;
+diseased_before.innerHTML = active_user.diseased_before;
+if (active_user.status == true) {
+  status_check.checked = true;
+} else {
+  status_check.checked = false;
+}
 
-full_name.innerHTML = active_user["fullname"]
-dob.innerHTML = active_user["dob"]
-email_id.innerHTML = active_user["emailid"]
-ph_no.innerHTML = active_user["phnum"]
-gender.innerHTML = active_user["gendermf"]
-donated_before.innerHTML = active_user["donated_before"]
-occupation.innerHTML = active_user["occupation"]
-address.innerHTML = active_user["address"]
-age.innerHTML = active_user["age"]
-state.innerHTML = active_user["state"]
-district.innerHTML = active_user["district"]
-blood_group.innerHTML = active_user["bloodgroup"]
-diseased_before.innerHTML = active_user["diseased_before"]
- 
-let save_button = document.getElementById("save_button")
-let details_div = document.querySelector(".details")
-let edit_button= document.getElementById("edit_button")
-edit_button.addEventListener("click",e=>{
+const save_button = document.getElementById("save_button");
+const details_div = document.querySelector(".details");
+const edit_button = document.getElementById("edit_button");
+edit_button.addEventListener("click", (e) => {
+  edit_button.classList.add("not_view");
+  save_button.classList.add("view");
+  save_button.classList.remove("not_view");
 
-    edit_button.classList.add("not_view")
-    save_button.classList.add("view")
-    save_button.classList.remove("not_view")
-
-
-
-    details_div.innerHTML= `<div class="detail">
+  details_div.innerHTML = `<div class="detail">
     <p>Full name</p>
     <input id="full_name">
   </div>
@@ -91,100 +93,117 @@ edit_button.addEventListener("click",e=>{
    <div class="detail">
     <p>Have you Donated blood before</p>
     <input id="donated_before" >
-  </div>`
-  let full_name =document.getElementById("full_name")
-  let dob =document.getElementById("dob")
-  let email_id =document.getElementById("email_id")
-  let gender =document.getElementById("gender")
-  let ph_no =document.getElementById("ph_no")
-  let occupation =document.getElementById("occupation")
-  let blood_group =document.getElementById("blood_group")
-  let address =document.getElementById("address")
-  let state =document.getElementById("state")
-  let age =document.getElementById("age")
-  let district =document.getElementById("district")
-  let diseased_before =document.getElementById("diseased_before")
-  let donated_before =document.getElementById("donated_before")
- 
- 
-  full_name.value = active_user["fullname"]
-dob.value = active_user["dob"]
-email_id.value = active_user["emailid"]
-ph_no.value = active_user["phnum"]
-gender.value = active_user["gendermf"]
-donated_before.value = active_user["donated_before"]
-occupation.value = active_user["occupation"]
-address.value = active_user["address"]
-age.value = active_user["age"]
-state.value = active_user["state"]
-district.value = active_user["district"]
-blood_group.value = active_user["bloodgroup"]
-diseased_before.value = active_user["diseased_before"]
+    </div>
+  <div class="detail">
+  <input type="checkbox" id="status">
+<label for="status">Toggle</label>
+</div>`;
+  const full_name = document.getElementById("full_name");
+  const dob = document.getElementById("dob");
+  const email_id = document.getElementById("email_id");
+  const gender = document.getElementById("gender");
+  const ph_no = document.getElementById("ph_no");
+  const occupation = document.getElementById("occupation");
+  const blood_group = document.getElementById("blood_group");
+  const address = document.getElementById("address");
+  const state = document.getElementById("state");
+  const age = document.getElementById("age");
+  const district = document.getElementById("district");
+  const diseased_before = document.getElementById("diseased_before");
+  const donated_before = document.getElementById("donated_before");
+  const status_check = document.getElementById("status");
 
-save_button.addEventListener("click",saveDetails)
-})
+  if (active_user.status == true) {
+    status_check.checked = true;
+  } else {
+    status_check.checked = false;
+  }
 
-function saveDetails(){
-    let full_name =document.getElementById("full_name")
-let dob =document.getElementById("dob")
-let email_id =document.getElementById("email_id")
-let gender =document.getElementById("gender")
-let ph_no =document.getElementById("ph_no")
-let occupation =document.getElementById("occupation")
-let blood_group =document.getElementById("blood_group")
-let address =document.getElementById("address")
-let state =document.getElementById("state")
-let age =document.getElementById("age")
-let district =document.getElementById("district")
-let diseased_before =document.getElementById("diseased_before")
-let donated_before =document.getElementById("donated_before")
-let  active_user =JSON.parse( localStorage.getItem("active_user"))
+  full_name.value = active_user.fullname;
+  dob.value = active_user.dob;
+  email_id.value = active_user.emailid;
+  ph_no.value = active_user.phnum;
+  gender.value = active_user.gendermf;
+  donated_before.value = active_user.donated_before;
+  occupation.value = active_user.occupation;
+  address.value = active_user.address;
+  age.value = active_user.age;
+  state.value = active_user.state;
+  district.value = active_user.district;
+  blood_group.value = active_user.bloodgroup;
+  diseased_before.value = active_user.diseased_before;
 
-let ref = active_user["fullname"]
+  save_button.addEventListener("click", saveDetails);
+});
 
-    active_user ={}
+function saveDetails() {
+  const full_name = document.getElementById("full_name");
+  const dob = document.getElementById("dob");
+  const email_id = document.getElementById("email_id");
+  const gender = document.getElementById("gender");
+  const ph_no = document.getElementById("ph_no");
+  const occupation = document.getElementById("occupation");
+  const blood_group = document.getElementById("blood_group");
+  const address = document.getElementById("address");
+  const state = document.getElementById("state");
+  const age = document.getElementById("age");
+  const district = document.getElementById("district");
+  const diseased_before = document.getElementById("diseased_before");
+  const donated_before = document.getElementById("donated_before");
+  let status_check = document.getElementById("status");
+  if (status_check.checked == true) {
+    status_check = true;
+  } else {
+    status_check = false;
+  }
 
-    active_user["fullname"]=full_name.value 
-    active_user["dob"] = dob.value
-    active_user["emailid"] = email_id.value
-    active_user["phnum"] = ph_no.value
-    active_user["gendermf"] = gender.value
-    active_user["donated_before"] = donated_before.value
-    active_user["occupation"] = occupation.value
-     active_user["address"] = address.value 
-    active_user["age"] = age.value
-    active_user["state"] = state.value
-   active_user["district"] =district.value 
-   active_user["bloodgroup"] = blood_group.value 
-    active_user["diseased_before"] =diseased_before.value
-    console.log(active_user);
+  let active_user = JSON.parse(localStorage.getItem("active_user"));
 
-    let donor_details = JSON.parse(localStorage.getItem("donor_details"))
-    donor_details.forEach((e,index)=>{
-        if(e["fullname"]==ref){
-            donor_details[index] = active_user
-        }
-    })
-    localStorage.setItem("active_user", JSON.stringify(active_user))
-    localStorage.setItem("donor_details", JSON.stringify(donor_details))
+  const ref = active_user.fullname;
 
-    window.location.href ="./donor_profile.html"
+  active_user = {};
+
+  active_user.fullname = full_name.value;
+  active_user.dob = dob.value;
+  active_user.emailid = email_id.value;
+  active_user.phnum = ph_no.value;
+  active_user.gendermf = gender.value;
+  active_user.donated_before = donated_before.value;
+  active_user.occupation = occupation.value;
+  active_user.address = address.value;
+  active_user.age = age.value;
+  active_user.state = state.value;
+  active_user.district = district.value;
+  active_user.bloodgroup = blood_group.value;
+  active_user.diseased_before = diseased_before.value;
+  active_user.status = status_check;
+  console.log(active_user);
+
+  const donor_details = JSON.parse(localStorage.getItem("donor_details"));
+  donor_details.forEach((e, index) => {
+    if (e.fullname == ref) {
+      donor_details[index] = active_user;
+    }
+  });
+  localStorage.setItem("active_user", JSON.stringify(active_user));
+  localStorage.setItem("donor_details", JSON.stringify(donor_details));
+
+  window.location.href = "./donor_profile.html";
 }
 
+const logout_btn = document.querySelector("#logout_button");
+logout_btn.addEventListener("click", (e) => {
+  localStorage.removeItem("status");
+  localStorage.removeItem("active_user");
+  window.location.href = "../index.html";
+});
 
-
-let logout_btn =document.querySelector("#logout_button")
-logout_btn.addEventListener("click",e=>{
-  localStorage.removeItem("status")
-  localStorage.removeItem("active_user")
-  window.location.href="../index.html"
-})
-
-
-let _status= localStorage.getItem("status")
-let login_signup =document.querySelector(".login_signup")
-let register = document.querySelector("#register")
-if(_status){
-  register.classList.add("not_view")
-  login_signup.classList.add("not_view")
+const _status = localStorage.getItem("status");
+const login_signup = document.querySelector(".login_signup");
+const register = document.querySelector("#register");
+if (_status) {
+  register.classList.add("not_view");
+  if (login_signup) {
+    login_signup.classList.add("not_view");
+  }
 }

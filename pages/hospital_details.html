@@ -13,13 +13,24 @@
      <!--navbar-->
      <header>
         <nav>
-           <div class="nav1"><img src="../assets/img/Donor_logo.png" alt="logo" />
+           <div class="nav1">
+<img src="../assets/img/Donor_logo.png" alt="logo">
            <ul class="nav-links">
-             <li class="active"><a href="../index.html">Home</a></li>
-             <li><a href="#">Blood Availability</a></li>
-             <li><a href="donor_availability.html">Donor Availability</a></li>
-             <li id="register"><a href="pages/registration.html" >Register</a></li>
-             <li><span href="" id="profile_page">Profile</span></li>
+             <li class="active">
+<a href="../index.html">Home</a>
+</li>
+             <li>
+<a href="#">Blood Availability</a>
+</li>
+             <li>
+<a href="donor_availability.html">Donor Availability</a>
+</li>
+             <li id="register">
+<a href="pages/registration.html">Register</a>
+</li>
+             <li>
+<span href="" id="profile_page">Profile</span>
+</li>
          </div>
            <div class="login_signup">
              <button>Signup</button>
@@ -33,7 +44,6 @@
        </div>
        </body>
        <script>
-
 // get url from search bar
 const url = window.location.search;
 console.log(url,"url");
@@ -42,20 +52,20 @@ console.log(urlParams,"urlparams");
 const hospital_name = urlParams.get("name")
 console.log(hospital_name);
 
-let hospital_details = JSON.parse(localStorage.getItem("hospital_details"))
+const hospital_details = JSON.parse(localStorage.getItem("hospital_details"))
 let index_value
 hospital_details.forEach((e,index) => {
-  if(e["hospital_name"]==hospital_name){
+  if(e.hospital_name==hospital_name){
     index_value = index
   }
 })
 
-      let main_container = document.querySelector(".main_container")
+      const main_container = document.querySelector(".main_container")
         main_container.innerHTML=
         
         `
          <div class="container_left">
-          <h1>${hospital_details[index_value]["hospital_name"]}</h1>
+          <h1>${hospital_details[index_value].hospital_name}</h1>
           <h3 ><span id="grey">24*7 Service</span> </h3>
             <img src="../assets/img/hospital_img.jpg" alt="hospital img"/>
         </div>
@@ -64,55 +74,53 @@ hospital_details.forEach((e,index) => {
             <div class="details">
               <p>Hospital Name</p>
 
-              <span>${hospital_details[index_value]["hospital_name"]}</span>
+              <span>${hospital_details[index_value].hospital_name}</span>
             </div>
             <div class="details">
               <p>Hospital_address</p>
-              <span>${hospital_details[index_value]["hospital_address"]}</span>
+              <span>${hospital_details[index_value].hospital_address}</span>
             </div>
             <div class="details">
               <p>District</p>
-              <span>${hospital_details[index_value]["district"]}</span>
+              <span>${hospital_details[index_value].district}</span>
             </div>
             <div class="details">
               <p>Pincode</p>
               
-              <span>${hospital_details[index_value]["pincode"]}</span>
+              <span>${hospital_details[index_value].pincode}</span>
             </div>
             <div class="details">
               <p>Hospital license</p>
-              <span>${hospital_details[index_value]["hosp_license"]}</span>
+              <span>${hospital_details[index_value].hosp_license}</span>
             </div>
             <div class="details">
               <p>Telephone number</p>
-              <span>${hospital_details[index_value]["tel_num"]}</span>
+              <span>${hospital_details[index_value].tel_num}</span>
             </div>
             <div class="details">
               <p>EMAIL ID</p>
-              <span>${hospital_details[index_value]["gmail"]}</span>
+              <span>${hospital_details[index_value].gmail}</span>
             </div>
             <div class="blood_stock">
               <h4>Blood Stock Available:</h4>
             <div class="details">
-              <p>${hospital_details[index_value]["total_blood_avail"][0]["blood_group_avail"]} : ${hospital_details[index_value]["total_blood_avail"][0]["blood_stock_avail"]} units</p>
-              <p>${hospital_details[index_value]["total_blood_avail"][1]["blood_group_avail"]} : ${hospital_details[index_value]["total_blood_avail"][1]["blood_stock_avail"]}units</p>
-              <p>${hospital_details[index_value]["total_blood_avail"][2]["blood_group_avail"]} : ${hospital_details[index_value]["total_blood_avail"][2]["blood_stock_avail"]}units</p>
+              <p>${hospital_details[index_value].total_blood_avail[0].blood_group_avail} : ${hospital_details[index_value].total_blood_avail[0].blood_stock_avail} units</p>
+              <p>${hospital_details[index_value].total_blood_avail[1].blood_group_avail} : ${hospital_details[index_value].total_blood_avail[1].blood_stock_avail}units</p>
+              <p>${hospital_details[index_value].total_blood_avail[2].blood_group_avail} : ${hospital_details[index_value].total_blood_avail[2].blood_stock_avail}units</p>
             </div>
           </div>
            </div>
         </div>`
 
-        let status= localStorage.getItem("status")
-  let login_signup =document.querySelector(".login_signup")
+        const status= localStorage.getItem("status")
+  const login_signup =document.querySelector(".login_signup")
   // let donate_get_blood_div = document.querySelector(".donate_get_blood")
-  let register = document.querySelector("#register")
+  const register = document.querySelector("#register")
 
   if(status){
     register.classList.add("not_view")
     login_signup.classList.add("not_view")
   }
-  
-
        </script>
        <script src="../assets/js/common.js"></script>
        </html>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DONOR</title>
     <link rel="stylesheet" href="../assets/css/blood_availability.css">
     <link rel="stylesheet" href="../assets/css/home.css">
@@ -14,13 +14,24 @@
      <!--navbar-->
      <header>
      <nav>
-        <div class="nav1"><img src="../assets/img/Donor_logo.png" alt="logo"/>
+        <div class="nav1">
+<img src="../assets/img/Donor_logo.png" alt="logo">
         <ul class="nav-links">
-          <li class="active"><a href="../index.html">Home</a></li>
-          <li><a href="blood_availability.html">Blood Availability</a></li>
-          <li><a href="donor_availability.html">Donor Availability</a></li>
-          <li id="register"><a href="donor_registration.html" >Register</a></li>
-          <li><a id="profile_page">Profile</a></li>
+          <li class="active">
+<a href="../index.html">Home</a>
+</li>
+          <li>
+<a href="blood_availability.html">Blood Availability</a>
+</li>
+          <li>
+<a href="donor_availability.html">Donor Availability</a>
+</li>
+          <li id="register">
+<a href="donor_registration.html">Register</a>
+</li>
+          <li>
+<a id="profile_page">Profile</a>
+</li>
       </div>
         <div class="login_signup">
           <button>Signup</button>
@@ -91,7 +102,7 @@
               <option >Virudhunagar</option>
           </select>
        
-          <select id="select_blood_group" >
+          <select id="select_blood_group">
               <option >Select Blood Group</option>
               <option >AB-ve</option>
               <option >AB+ve</option>
@@ -104,7 +115,6 @@
               <option >O+ve</option>
               <option >All Blood Groups</option>
           </select>
-         
           
           <!-- <select id ="state">
               <option value="district">Components of Blood</option>
@@ -120,12 +130,10 @@
               <option value="district">fresh frozen plasma</option>
           </select> -->
       </form>
-      <a  id="submit">Submit</a>
+      <a id="submit">Submit</a>
   </div>
 </div>
 </div>
-
-
 
 <div class="main_cont">
   <!-- <a href="./hospital_details.html?name=KING" class="cont_content">
@@ -138,55 +146,54 @@
 <script src="../assets/js/common.js"></script>
 
   <script>
-    let hospital_detail=JSON.parse(localStorage.getItem("hospital_details"))
-    let main_cont =document.querySelector(".main_cont")
+    const hospital_detail=JSON.parse(localStorage.getItem("hospital_details"))
+    const main_cont =document.querySelector(".main_cont")
 
-let district=[]
+const district=[]
     for (let i = 0; i < hospital_detail.length; i++) {
-      main_cont.innerHTML+=` 
-       <a href="./hospital_details.html?name=${hospital_detail[i]["hospital_name"]}" class="cont_content">
+      main_cont.innerHTML +=` 
+       <a href="./hospital_details.html?name=${hospital_detail[i].hospital_name}" class="cont_content">
       <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
-      <p><span>${hospital_detail[i]["hospital_name"]}</span></p>
-      <p>${hospital_detail[i]["hospital_address"]} ${hospital_detail[i]["district"]}</p>
+      <p><span>${hospital_detail[i].hospital_name}</span></p>
+      <p>${hospital_detail[i].hospital_address} ${hospital_detail[i].district}</p>
     </a>
       `
-      district.push(hospital_detail[i]["district"])
+      district.push(hospital_detail[i].district)
 
-      console.log(hospital_detail[i]["district"]);
-
+      console.log(hospital_detail[i].district);
 
       // `dscnjjczjz ${jnwcnc}`
     }
     console.log(district);
 
-    let place=document.getElementById("state")
-    let option=document.getElementsByTagName("option")
-    let selectedValue;
-    let selvalue;
-    place.addEventListener("change", (event) => {
-        check = event.target.innerText
-        selectedValue = event.target.value;
-        console.log(selectedValue);
-        selvalue= selectedValue
-    //    return selvalue
-    let dic = document.querySelectorAll(".cont_content");
-    dic.forEach(ex => {
-        let child = ex.children[2].textContent.toLowerCase();
-        console.log(child +"iam");
+    // const place=document.getElementById("state")
+    // const option=document.getElementsByTagName("option")
+    // let selectedValue;
+    // let selvalue;
+    // place.addEventListener("change", (event) => {
+    //     check = event.target.innerText
+    //     selectedValue = event.target.value;
+    //     console.log(selectedValue);
+    //     selvalue= selectedValue
+    // //    return selvalue
+    // const dic = document.querySelectorAll(".cont_content");
+    // dic.forEach(ex => {
+    //     const child = ex.children[2].textContent.toLowerCase();
+    //     console.log(`${child }iam`);
         
-        if (child===selvalue) {
-          ex.style.display = "block"
-          // console.log("isac");
-        }
-        else {
-          ex.style.display = "none"
-          // console.log("deva");
-        }
-      })
-    });
-    let status= localStorage.getItem("status")
-  let login_signup =document.querySelector(".login_signup")
-  let register = document.querySelector("#register")
+    //     if (child===selvalue) {
+    //       ex.style.display = "block"
+    //       // console.log("isac");
+    //     }
+    //     else {
+    //       ex.style.display = "none"
+    //       // console.log("deva");
+    //     }
+    //   })
+    // });
+    const status= localStorage.getItem("status")
+  const login_signup =document.querySelector(".login_signup")
+  const register = document.querySelector("#register")
   if(status){
     register.classList.add("not_view")
     login_signup.classList.add("not_view")
@@ -194,29 +201,25 @@ let district=[]
 
 // filtering the districts-----------------
 
-
-
 // console.log(select_blood_group,"uyt");
 
-let submit = document.getElementById("submit")
+const submit = document.getElementById("submit")
 submit.addEventListener("click",e=>{
-  let district_value = document.getElementById("district").value
-let select_blood_group = document.getElementById("select_blood_group").value
+  const district_value = document.getElementById("district").value
+const select_blood_group = document.getElementById("select_blood_group").value
 main_cont.innerHTML=""
   for (let i = 0; i < hospital_detail.length; i++) {
-    if(hospital_detail[i]["district"]==district_value && (select_blood_group==hospital_detail[i]["total_blood_avail"][0]["blood_group_avail"] || select_blood_group==hospital_detail[i]["total_blood_avail"][1]["blood_group_avail"]||select_blood_group==hospital_detail[i]["total_blood_avail"][2]["blood_group_avail"]) ){
+    if(hospital_detail[i].district==district_value && (select_blood_group==hospital_detail[i].total_blood_avail[0].blood_group_avail || select_blood_group==hospital_detail[i].total_blood_avail[1].blood_group_avail||select_blood_group==hospital_detail[i].total_blood_avail[2].blood_group_avail) ){
       main_cont.innerHTML+=` 
-       <a href="./hospital_details.html?name=${hospital_detail[i]["hospital_name"]}" class="cont_content">
-      <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
-      <p><span>${hospital_detail[i]["hospital_name"]}</span></p>
-      <p>${hospital_detail[i]["hospital_address"]} ${hospital_detail[i]["district"]}</p>
+       <a href="./hospital_details.html?name=${hospital_detail[i].hospital_name}" class="cont_content">
+      <img src="../assets/img/hospital_img.jpg" alt="hospital img"/>
+      <p><span>${hospital_detail[i].hospital_name}</span></p>
+      <p>${hospital_detail[i].hospital_address} ${hospital_detail[i].district}</p>
     </a>
       `
     }
     }
     
 })
-
-
   </script>
   </html>

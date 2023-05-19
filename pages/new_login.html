@@ -24,37 +24,44 @@
           </div>
           <div class="form-inner">
             <!--  donor login============================ -->
-            <form action="#" class="donor_login login" >
+            <form action="#" class="donor_login login">
               <div class="field">
                 <input type="email" placeholder="Email Address" class="email" required>
               </div>
               <div class="field">
                 <input type="password" placeholder="Password" class="password" required>
               </div>
-              <div class="pass-link"><a href="#">Forgot password?</a></div>
+              <div class="pass-link">
+<a href="#">Forgot password?</a>
+</div>
               <div class="field btn">
                 <div class="btn-layer"></div>
                 <input type="submit" value="Login">
               </div>
-              <div class="signup-link">Not a Donor? <a href="./donor_registration.html">Signup now</a></div>
+              <div class="signup-link">
+Not a Donor? <a href="./donor_registration.html">Signup now</a>
+</div>
             </form>
 
             <!-- hospital login----------------- -->
 
-
             <form action="#" class="hospital_login login">
               <div class="field">
-                <input type="email" placeholder="Email Address"  class="email" required>
+                <input type="email" placeholder="Email Address" class="email" required>
               </div>
               <div class="field">
                 <input type="password" placeholder="Password" class="password" required>
               </div>
-              <div class="pass-link"><a href="#">Forgot password?</a></div>
+              <div class="pass-link">
+<a href="#">Forgot password?</a>
+</div>
               <div class="field btn">
                 <div class="btn-layer"></div>
                 <input type="submit" value="Login">
               </div>
-              <div class="signup-link">Not registered hospital? <a href="./hospital_registration.html">Signup now</a></div>
+              <div class="signup-link">
+Not registered hospital? <a href="./hospital_registration.html">Signup now</a>
+</div>
             </form>
 
             <!-- <form action="#" class="signup">
@@ -95,22 +102,22 @@
       //   signupBtn.click();
       //   return false;
       // });
-      let donor_login =document.querySelector(".donor_login")
+      const donor_login =document.querySelector(".donor_login")
       donor_login.addEventListener("submit",e=>{
         e.preventDefault()
 
-        let email = document.querySelectorAll(".email")
-        let password = document.querySelectorAll(".password")
+        const email = document.querySelectorAll(".email")
+        const password = document.querySelectorAll(".password")
 
-        let email_value = email[0].value
-        let password_value = password[0].value
-        let donor_details= JSON.parse(localStorage.getItem("donor_details"))
+        const email_value = email[0].value
+        const password_value = password[0].value
+        const donor_details= JSON.parse(localStorage.getItem("donor_details"))
         let active_user;
         let check =0
         donor_details.forEach(e => {
           // console.log(email_value,password);
 
-          if(e["emailid"]==email_value&&e["password"]==password_value){
+          if(e.emailid==email_value&&e.password==password_value){
             active_user=e
             console.log(active_user);
             localStorage.setItem("active_user",JSON.stringify(active_user))
@@ -129,25 +136,22 @@
           else{
             alert("Incorrect email or password")
             console.log("efcd");
-            
 
           }
       })
 
-
-      let hospital_login =document.querySelector(".hospital_login")
-
+      const hospital_login =document.querySelector(".hospital_login")
 
       //  Hospital login---------------------
       hospital_login.addEventListener("submit",e=>{
         e.preventDefault()
-        let email = document.querySelectorAll(".email")
-        let password = document.querySelectorAll(".password")
+        const email = document.querySelectorAll(".email")
+        const password = document.querySelectorAll(".password")
         console.log("dfvwdfv");
 
-        let email_value = email[1].value
-        let password_value = password[1].value
-        let hospital_details= JSON.parse(localStorage.getItem("hospital_details"))
+        const email_value = email[1].value
+        const password_value = password[1].value
+        const hospital_details= JSON.parse(localStorage.getItem("hospital_details"))
         let active_user;
         let check =0
         console.log(email_value,password_value);
@@ -155,10 +159,10 @@
         hospital_details.forEach(e => {
           console.log("fdec");
 
-          if(e["gmail"]==email_value&&e["password"]==password_value){
-            active_user=e["gmail"]
+          if(e.gmail==email_value&&e.password==password_value){
+            active_user=e.gmail
             // console.log(active_user);
-            localStorage.setItem("active_hospital",e["gmail"])
+            localStorage.setItem("active_hospital",e.gmail)
             localStorage.setItem("status","hospital")
 
             return check=1
@@ -174,10 +178,8 @@
           }
           else{
             alert("Incorrect email or password")
-            
 
           }
       })
-
 </script>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> DONOR </title>
-        <link rel="stylesheet" href="../assets/css/registration.css" />
+        <link rel="stylesheet" href="../assets/css/registration.css">
         <title>Registration Form</title>
     </head>
     <body>
@@ -12,7 +12,7 @@
 
             <header>Donor Registration</header>
      <!-- <form> -->
-        <form  id="signup-form" >
+        <form id="signup-form">
         <div class="form first">
             <div class="details personal">
              
@@ -31,7 +31,6 @@
                     <label>Email</label>
                     <input type="email"id="emailid" placeholder="Enter your email" required>
                 </div>
-
                 
                     <div class="input-field">
                         <label>Mobile Number</label>
@@ -96,11 +95,10 @@
                      <!-- <label>State</label>
                      <input type="text"  pattern="[A-Za-z]{2,32}" placeholder="State" id="state" required>
                  </div> -->
- 
                  
                      <div class="input-field">
                         <label>District</label>
-                        <select id ="dist" >
+                        <select id ="dist">
                             <option >Select</option>
                             <option >Ariyalur</option>
                             <option >Chennai</option>
@@ -166,7 +164,7 @@
                         <p>Do you suffer any Diseases / Allergies before?</p>
                         
                         <label for="op1" class="label1">
-                            <input type="radio" name="radio" id="diseased_before" >
+                            <input type="radio" name="radio" id="diseased_before">
                             Yes
                         </label>
                         
@@ -196,32 +194,32 @@
 
              <div class="buttons">   
                           <a href="../index.html" id="back_button">Back</a>
-             <button  type="submit" class="submitbtn">
+             <button type="submit" class="submitbtn">
                 Submit
              </button>
             </div>
-
              
             </form>
              </div>
         </div>
 
-
         </div>
-
         
     </body>
     <script>
-        let form =  document.querySelector("form")
+        const form =  document.querySelector("form")
         form.addEventListener("submit",submit)
         function submit(e) {
             e.preventDefault()
-          const dob =document.getElementById("dob").value
+          const dob = document.getElementById("dob").value
           console.log(dob);
-          let dob_year=2023- dob.slice(0,4)
-            console.log(dob_year)
+          // 2005/05/25
+          const dob_year = 2023 - dob.slice(0,4)//2005
+            console.log(dob_year)  // 18
 
           const age = document.getElementById("age").value;
+
+          
           if(age==dob_year||age==(dob_year-1)){
             if(age>17&& age<60){
           const fullname = document.getElementById("fullname").value.trim();
@@ -251,28 +249,29 @@
           }
           const disease_name =document.getElementById("disease_name").value.trim()
 
-          let password =document.getElementById("password").value.trim()
-          let cpassword =document.getElementById("cpassword").value.trim()
+          const password =document.getElementById("password").value.trim()
+          const cpassword =document.getElementById("cpassword").value.trim()
 
           if (password==cpassword) {
-            let donor_details = JSON.parse(localStorage.getItem("donor_details"))?? []
-            let donor_detail ={
-                "fullname":fullname,
-                "dob":dob,
-                "emailid":emailid,
-                "phnum":phnum,
-                "gendermf":gendermf,
-                "donated_before":donated_before,
-                "occupation":occupation,
-                "address":address,
-                age,
-                "state":state,
-                "district":district,
-                "bloodgroup":bloodgroup,
-                "diseased_before":diseased_before,
-                "disease_name":disease_name,
-                "password":password
-            }
+            const donor_details = JSON.parse(localStorage.getItem("donor_details"))?? []
+            const donor_detail ={
+        fullname,
+        dob,
+        emailid,
+        phnum,
+        gendermf,
+        donated_before,
+        occupation,
+        address,
+        age,
+        state,
+        district,
+        bloodgroup,
+        diseased_before,
+        disease_name,
+        password,
+        status:true
+    }
             donor_details.push(donor_detail)
             localStorage.setItem("donor_details",JSON.stringify(donor_details))
             // localStorage.setItem("status","donor")
@@ -291,7 +290,6 @@ alert("Your Age should be between 18 and 60")
           else{
 alert("The Date of Birth and Age is Irrelavant")
           }
-   
     
         }
       </script>

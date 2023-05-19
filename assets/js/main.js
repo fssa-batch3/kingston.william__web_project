@@ -1,4 +1,4 @@
-let hospital_details_data = [
+const hospital_details_data = [
   {
     hospital_name: "Aakash Fertility Centre",
     district: "Chennai",
@@ -137,7 +137,7 @@ let hospital_details_data = [
     password: "123@Sathyam",
   },
 ];
-let check = JSON.parse(localStorage.getItem("hospital_details")) ?? 1;
+const check = JSON.parse(localStorage.getItem("hospital_details")) ?? 1;
 
 if (check == 1) {
   localStorage.setItem(
@@ -147,7 +147,7 @@ if (check == 1) {
   console.log("details added");
 }
 
-let donor_names = [
+const donor_names = [
   {
     fullname: "Kingston",
     dob: "2002-06-20",
@@ -216,12 +216,9 @@ let donor_names = [
   },
 ];
 
-let check1 = JSON.parse(localStorage.getItem("donor_details")) ?? 1;
+const check1 = JSON.parse(localStorage.getItem("donor_details")) ?? 1;
 
 if (check1 == 1) {
-  localStorage.setItem(
-    "donor_details",
-    JSON.stringify(donor_names)
-  );
+  localStorage.setItem("donor_details", JSON.stringify(donor_names));
   console.log("donor details added");
 }

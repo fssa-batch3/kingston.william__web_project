@@ -87,13 +87,14 @@
     right: 150px;
 }
   /* status button */
-  input[type=checkbox]{
+
+  .detail input[type=checkbox]{
     height: 0;
     width: 0;
     visibility: hidden;
   }
   
-  label {
+  .detail label {
     cursor: pointer;
     text-indent: -9999px;
     width: 70px;
@@ -105,7 +106,7 @@
     bottom: 10px;
   }
   
-  label:after {
+ .detail label:after {
     content: '';
     position: absolute;
     top: 5px;
@@ -117,16 +118,16 @@
     transition: 0.1s;
   }
   
-  input:checked + label {
+  .detail input:checked + label{
     background: #bada55;
   }
   
-  input:checked + label:after {
+ .detail input:checked + label:after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
   }
   
-  label:active:after {
+  .detail label:active:after {
     width: 10px;
   }
   
@@ -139,4 +140,6 @@
   }
          */
   
-  
+
+
+

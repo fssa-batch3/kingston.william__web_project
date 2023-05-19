@@ -15,17 +15,30 @@
    <!--navbar-->
    <header>
     <nav>
-       <div class="nav1"><img src="../assets/img/Donor_logo.png" alt="logo" />
+       <div class="nav1">
+<img src="../assets/img/Donor_logo.png" alt="logo">
        <ul class="nav-links">
-        <li class="active"><a href="../index.html">Home</a></li>
-         <li><a href="blood_availability.html">Blood Availability</a></li>
-         <li><a href="donor_availability.html">Donor Availability</a></li>
-         <li id="register"><a href="donor_registration.html">Register</a></li>
-         <li><span  id="profile_page">Profile</span></li>
+        <li class="active">
+<a href="../index.html">Home</a>
+</li>
+         <li>
+<a href="blood_availability.html">Blood Availability</a>
+</li>
+         <li>
+<a href="donor_availability.html">Donor Availability</a>
+</li>
+         <li id="register">
+<a href="donor_registration.html">Register</a>
+</li>
+         <li>
+<span id="profile_page">Profile</span>
+</li>
      </div>
        <div class="login_signup">
          <!-- <a href=/registrationTwo.html"><button>Signup</button></a> -->
-         <a href="/new_login.html"><button>Login</button></a>
+         <a href="/new_login.html">
+<button>Login</button>
+</a>
        </div>
      </nav>
    </header>
@@ -44,7 +57,6 @@
               transfusion is approximately 3 pints.</p>
               <div class="donate_get_blood">
               <a href="donor_registration.html">Donor Register</a>
-            
             </div>
           </div>
       </div>
@@ -59,7 +71,6 @@
       <select id ="state">
           <option value="state">TAMIL NADU</option>
       </select>
-        
         <select id ="district">
           <option >Select District</option>
           <option >Ariyalur</option>
@@ -102,7 +113,7 @@
           <option >Virudhunagar</option>
       </select>
      
-      <select id="select_blood_group" >
+      <select id="select_blood_group">
             <option>Select Blood Group</option>
             <option>AB-ve</option>
             <option>AB+ve</option>
@@ -118,58 +129,86 @@
     <a id="submit">Submit</a>
 </div>
 </body>
+<div>
+
+  <div class="active_status">
+  <div class="active">
+  <div class="online_round green" >
+  </div>
+  <p>Active</p>
+</div>
+<div class="active">
+  <div class="online_round red" >
+  </div>
+  <p>InActive</p>
+</div>
+</div>
+</div>
 <div class="main_cont">
   <!-- <a href="./hospital_details.html?name=KING" class="cont_content">
-    <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
+    <img src="../assets/img/profile_image.jpg" alt="hospital img" />
     <p><span>KIng hospital</span></p>
     <p>madurai</p>
+    <div class="online_round">
+    </div>
   </a> -->
+  
 </div>
 
-
 <script>
-  let donor_details=JSON.parse(localStorage.getItem("donor_details"))
-  let main_cont =document.querySelector(".main_cont")
-
+  const donor_details=JSON.parse(localStorage.getItem("donor_details"))
+  const main_cont =document.querySelector(".main_cont")
   for (let i = 0; i < donor_details.length; i++) {
+  let classs ="green"
+    
+    if(donor_details[i].status!=true){
+      classs="red"
+    }
     main_cont.innerHTML+=`
-     <a href="./donor_details.html?name=${donor_details[i]["emailid"]}" class="cont_content">
+     <a href="./donor_details.html?name=${donor_details[i].emailid}" class="cont_content">
     <img src="../assets/img/profile_image.jpg" alt="donor img" />
-    <p><span>${donor_details[i]["fullname"]}</span></p>
-    <p>${donor_details[i]["address"]} ${donor_details[i]["district"]}</p>
-  </a>
+    <p><span>${donor_details[i].fullname}</span></p>
+    <p>${donor_details[i].address} ${donor_details[i].district}</p>
+  
+    <div class="online_round ${classs}" >
+    </div>
+      </a>
     `
   }  
-let _status= localStorage.getItem("status")
-let login_signup =document.querySelector(".login_signup")
-let register = document.querySelector("#register")
+const _status= localStorage.getItem("status")
+const login_signup =document.querySelector(".login_signup")
+const register = document.querySelector("#register")
 if(_status){
   register.classList.add("not_view")
   login_signup.classList.add("not_view")
 }
 //filtering>>>>>>>
-let submit= document.getElementById("submit")
+const submit= document.getElementById("submit")
 submit.addEventListener("click",e=>{
-  let district_value = document.getElementById("district").value
-let select_blood_group = document.getElementById("select_blood_group").value
+  const district_value = document.getElementById("district").value
+const select_blood_group = document.getElementById("select_blood_group").value
 main_cont.innerHTML=""
   for (let i = 0; i < donor_details.length; i++) {
-    if(donor_details[i]["district"]==district_value && (select_blood_group==donor_details[i]["total_blood_avail"][0]["blood_group_avail"] || select_blood_group==donor_details[i]["total_blood_avail"][1]["blood_group_avail"]||select_blood_group==donor_details[i]["total_blood_avail"][2]["blood_group_avail"]) ){
+  let classs ="green"
+
+    if(donor_details[i].status!=true){
+      classs="red"
+    }
+    if(donor_details[i].district==district_value&&donor_details[i].bloodgroup==select_blood_group  ){
       main_cont.innerHTML+=` 
-       <a href="./donor_details.html?name=${donor_details[i]["fullname"]}" class="cont_content">
-      <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
-      <p><span>${donor_details[i]["fullname"]}</span></p>
-      <p>${donor_details[i]["donor_address"]} ${donor_details[i]["district"]}</p>
-    </a>
+       <a href="./donor_details.html?name=${donor_details[i].emailid}" class="cont_content">
+      <img src="../assets/img/profile_image.jpg" alt="hospital img" />
+      <p><span>${donor_details[i].fullname}</span></p>
+      <p>${donor_details[i].address} ${donor_details[i].district}</p>
+    
+      <div class="online_round ${classs}">
+    </div>
+      </a>
       `
-      
     }
     }
     
 })
-
-
 </script>
 <script src="../assets/js/common.js"></script>
-</html>
 </html>

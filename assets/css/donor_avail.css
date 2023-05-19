@@ -26,3 +26,32 @@ h2 {
 .email {
 	color: #666;
 }
+.online_round{
+   /* border: 1px solid orange; */
+   height: 20px;
+   width: 20px;
+   border-radius: 50%;
+    
+  }
+  .green{
+	background-color: greenyellow ;
+  }
+  .red{
+    background-color: red !important;
+  }
+  .active_status{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  .active{
+    display: flex;
+    padding:10px 40px;
+    width: 100px;
+    /* justify-content: center; */
+  }
+  .active div{
+    margin-right: 10px;
+  }
+
+  
