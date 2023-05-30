@@ -139,7 +139,15 @@
     height: 100vh;
   }
          */
-  
+    .red{
+            color: red;
+         }
+    .green{
+        color:#799e02 ;
+    }
+  .orange{
+    color: #ff6a39;
+  }
 
 
 
