@@ -1,4 +1,109 @@
-.add_img img{
-    width: 100px;
-  }
+@import url( 'https://fonts.googleapis.com/css2?family=Poppins');
+*{
+  font-family: 'poppins' , sans-serif;
+}
+.add_img img {
+  width: 100px;
+}
+
+.cont1 {
+  border: 1px solid black;
+  width: 1100px;
+  margin: 140px auto;
+  height: 600px;
+}
+.cont1 h2{
+  text-align: center;
+  font-size: 30px;
+}
+.input_fields{
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 1px solid black; */
+  justify-content: center;
+
+}
+.input-field {
+  margin: 15px;
+  /* border: 1px solid black; */
+ margin: 10px 20px;
+ width: 29%;
+ display: flex;
+ justify-content: space-evenly;
+ height: 40px;
+ align-items: center;
+ box-sizing: border-box;
+
+}
+.input-field input {
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 5px;
+  /* padding: 0 15px; */
+  /* box-sizing: border-box; */
+  /* height: 42px; */
+  /* margin: 8px 0; */
+}
+.input-field label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+.raised-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 3px 0px #2980b9;
+  transition: all 0.2s ease-in-out;
+}
+
+.raised-button:hover {
+  background-color: #2980b9;
+  box-shadow: 0px 5px 0px #2980b9;
+  transform: translateY(-2px);
+}
+
+.blood_group_avail{
   
+ margin: 10px 20px;
+ width: 29%;
+ display: flex;
+ justify-content: space-evenly;
+ height: 30px;
+ align-items: center;
+ box-sizing: border-box;
+ 
+}
+.blood_stock_avail{
+  width: 80px;
+
+}
+.input_fields2{
+ 
+  flex-wrap: wrap;
+  border: 1px solid black;
+  justify-content: center;
+}
+#district{
+  height: 32px;
+  width:200px;
+  border-radius: 5px;
+}
+#blood_group_avail{
+  height: 30px;
+  width:170px;
+}
+#label-content{
+position: absolute;
+top:450px;
+left:250px;
+
+}

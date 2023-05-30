@@ -1,0 +1,8 @@
+.not_view{
+    display: none;
+}
+#profile_page{
+cursor: pointer;
+    color: rgb(39, 39, 39);
+    font-weight: 500;
+}

@@ -1,195 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/hospital_registration.css">
     <title>Document</title>
   </head>
-  <style>
-    .raised-button {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #3498db;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      box-shadow: 0px 3px 0px #2980b9;
-      transition: all 0.2s ease-in-out;
-    }
 
-    .raised-button:hover {
-      background-color: #2980b9;
-      box-shadow: 0px 5px 0px #2980b9;
-      transform: translateY(-2px);
-    }
-  </style>
   <body>
     <div class="cont1">
-      <div class="cont_2main">
-        <div class="cont_2right">
+
           <h2>Hospital Registration</h2>
-          <form  id="registration_form">       
+          <form id="registration_form"> 
+            <div class="input_fields">      
 
-          <div class="input-field">
+          <span class="input-field">
             <label for="hospital_name">Hospital Name</label>
-            <input type="text" id="hospital_name" required />
-          </div>
+            <input type="text" id="hospital_name" required>
+          </span>
 
-          <div class="input-field">
+          <span class="input-field">
+            <label>District</label>
+            <select id ="district">
+                <option >Select</option>
+                <option >Ariyalur</option>
+                <option >Chennai</option>
+                <option >Coimbatore</option>
+                <option >Chengalpattu</option>
+                <option >Cuddalore</option>
+                <option >Dharmapuri</option>
+                <option >Dindigul</option>
+                <option >Erode</option>
+                <option >Kallakurichi</option>
+                <option >Kancheepuram</option>
+                <option >Karur</option>
+                <option >Krishnagiri</option>
+                <option >Madurai</option>
+                <option >Mayiladuthurai</option>
+                <option >Nagapattinam</option>
+                <option >Nagercoil</option>
+                <option >Namakkal</option>
+                <option >Perambalur</option>
+                <option >Pudukkottai</option>
+                <option >Ramanathapuram</option>
+                <option >Ranipet</option>
+                <option >Salem</option>
+                <option >Sivagangai</option>
+                <option >Tenkasi</option>
+                <option >Thanjavur</option>
+                <option >Theni</option>
+                <option >Thiruvallur</option>
+                <option >Thiruvarur</option>
+                <option >Thoothukudi</option>
+                <option >Trichirappalli</option>
+                <option >Thirunelveli</option>
+                <option >Tirupathur</option>
+                <option >Tiruppur</option>
+                <option >Tiruvannamalai</option>
+                <option >The Nilgiris</option>
+                <option >Vellore</option>
+                <option >Viluppuram</option>
+                <option >Virudhunagar</option>
+            </select>
+          </span>
+
+          <!-- <span class="input-field">
             <label for="district">District</label>
-            <input type="text" id="district" required />
-          </div>
+            <input type="text" pattern="[A-Za-z]{2,32}" id="district" required />
+          </span> -->
 
-          <div class="input-field">
+          <span class="input-field">
             <label for="hospital_address">Address</label>
-            <input type="text" id="hospital_address" required />
-          </div>
+            <input type="text" id="hospital_address" required>
+          </span>
 
-          <div class="input-field">
+          <span class="input-field">
             <label for="pincode">Area Pincode</label>
-            <input type="number" id="pincode" required />
-          </div>
+            <input type="number" pattern="[0-9]{10}" id="pincode" required>
+          </span>
 
-          <div class="input-field">
+          <span class="input-field">
             <label for="tel_num">Contact No</label>
-            <input type="text" id="tel_num" required />
-          </div>
+            <input type="text" pattern="[0-9]{10}" id="tel_num" required>
+          </span>
 
-          <div class="input-field">
+          <span class="input-field">
             <label for="gmail">Gmail</label>
-            <input type="email" id="gmail" required />
-          </div>
-
-          <!-- <div class="input-field">
-            <label >Blood Component Available</label>
-            <input type="text" id="" />
-          </div> -->
-          <div class="blood_availability">
-            <p>Blood availability</p>
-            <label for="blood_group_avail">
-              Blood Group Availability
-              <input type="text" id="blood_group_avail" class="blood_group_avail"/>
-            </label>
-            <label for="blood_stock_avail">
-              Blood Stock Availability(in Units)
-              <input type="number" id="blood_stock_avail"class="blood_stock_avail" />
-            </label>
-
-            <label for="blood_group_avail">
-                Blood Group Availability
-                <input type="text" id="blood_group_avail" class="blood_group_avail"/>
-              </label>
-              <label for="blood_stock_avail">
-                Blood Stock Availability(in Units)
-                <input type="number" id="blood_stock_avail" class="blood_stock_avail"/>
-              </label>
-
-            <button>Add a Blood group</button>
-          </div>
-
-          <div class="input-field">
+            <input type="email" id="gmail" required>
+          </span>
+        </div>
+        <div class="input_fields">
+          <span class="input-field">
             <label for="hosp_license">Hospital License</label>
-            <input type="text" id="hosp_license" required />
-          </div>
-
-          <div class="input-field">
+            <input type="text" id="hosp_license" required>
+          </span>
+          
+          <span class="input-field">
             <label for="hospital_renew">Hospital Renewed Year</label>
-            <input type="date" id="hospital_renew" required />
-          </div>
+            <input type="date" id="hospital_renew" required>
+          </span>
+                 
+          <span class="input-field">
+          <label for="Hospital Type">Hospital Type</label>
+          <input type="text" id="hospitaltype" required>
+        </span>
 
-          <!-- <div class="input-field"> -->
-            <!-- <label for="add_img">Add image</label> -->
-            <!-- <input type="file" id="add_img" /> -->
+        <span class="input-field">
+          <label for="password">Password</label>
+          <input type="text" id="password" required>
+        </span>
 
+        <span class="input-field">
+          <label for="confirm_pass">Confirm Password</label>
+          <input type="text" id="con_password" required>
+        </span>
+        
+        </div>
+        <!-- <div class="input-fields">
+          <span class="input-field">
+          <label for="blood_group_avail"> Blood Group Availability</label> -->
+         
+        <div class="input_fields">
+          <span class="input-field">
+            <label for="blood_group_avail" id="label-content">Blood Group Availability</label>  
+            <p>1.</p> 
+          <!-- <input type="text" id="blood_group_avail" class="blood_group_avail" required/> -->
+          <select id ="blood_group_avail" class="blood_group_avail">
+            <option>Select Blood Group</option>
+            <option>AB-ve</option>
+            <option>AB+ve</option>
+            <option>A-ve</option>
+            <option>A+ve</option>
+            <option>B-ve</option>
+            <option>B+ve</option>
+            <option>O-ve</option>
+            <option>O+ve</option>
+            <option>All Blood Groups</option>
+        </select>
+        <p>Unit</p>
+          <input type="number" pattern="[0-9]{10}" id="blood_stock_avail" class="blood_stock_avail" required>
+        </span>
+        <span class="input-field">
+          <p>2.</p>
+          <!-- <input type="text" id="blood_group_avail" class="blood_group_avail" required/> -->
+          <select id ="blood_group_avail" class="blood_group_avail">
+            <option>Select Blood Group</option>
+            <option>AB-ve</option>
+            <option>AB+ve</option>
+            <option>A-ve</option>
+            <option>A+ve</option>
+            <option>B-ve</option>
+            <option>B+ve</option>
+            <option>O-ve</option>
+            <option>O+ve</option>
+            <option>All Blood Groups</option>
+        </select>
+        <p>Unit</p>
+          <input type="number" pattern="[0-9]{10}" id="blood_stock_avail" class="blood_stock_avail" required>
+        </span>
+        <span class="input-field">
+          <p>3.</p>
+          <!-- <input type="text" id="blood_group_avail" class="blood_group_avail" required/> -->
+          <select id ="blood_group_avail" class="blood_group_avail">
+            <option>Select Blood Group</option>
+            <option>AB-ve</option>
+            <option>AB+ve</option>
+            <option>A-ve</option>
+            <option>A+ve</option>
+            <option>B-ve</option>
+            <option>B+ve</option>
+            <option>O-ve</option>
+            <option>O+ve</option>
+            <option>All Blood Groups</option>
+        </select>
+        <p>Unit</p>
+          <input type="number" pattern="[0-9]{10}" id="blood_stock_avail" class="blood_stock_avail" required>
+        </span>
+          <!-- <button>Add a Blood group</button> -->
+      </div>
           <!-- </div>-->
           <div class="add_img">
             <img src="../assets/img/profile_img.png" alt="img" id="changed_photo">
-            <input type="file" id="add_image_button"><label for="add_image_button">Add Image</label>
+            <input type="file" id="add_image_button">
           </div>
           <button type="submit" class="raised-button ">Submit</button>
         </form>
-        </div>
-        <!-- <a href="pages/signup.html">edit</a> -->
-        <!-- <a href="pages/signup.html"></a> -->
- 
-      </div>
     </div>
     <script>
         // hospital_name
         // district  hospital_address  pincode tel_num gmail blood_group_avail blood_stock_avail hosp_license  hospital_renew  add_img
-        let registration_form = document.getElementById("registration_form")
+        const registration_form = document.getElementById("registration_form")
 
         registration_form.addEventListener("submit",e=>{
             e.preventDefault()
 
+        const hospital_name = document.getElementById("hospital_name").value.trim()
+        const district = document.getElementById("district").value.trim()
+        const hospital_address = document.getElementById("hospital_address").value.trim()
+        const pincode = document.getElementById("pincode").value.trim()
+        const tel_num = document.getElementById("tel_num").value.trim()
+        const blood_group_avail = document.querySelectorAll(".blood_group_avail")
+        const blood_stock_avail = document.querySelectorAll(".blood_stock_avail")
+        const hosp_license = document.getElementById("hosp_license").value.trim()
+        const hospital_renew = document.getElementById("hospital_renew").value.trim()
+        // let add_image_button =document.getElementById("add_image_button").value.trim()
+        // let changed_photo= document.getElementById("changed_photo").value.trim()
+        const gmail= document.getElementById("gmail").value.trim()
+        const password =document.getElementById("password").value.trim()
+        const con_password =document.getElementById("con_password").value.trim()
+        const hospitaltype =document.getElementById("hospitaltype").value.trim()
 
-            let hospital_name = document.getElementById("hospital_name").value
-        let district = document.getElementById("district").value
-        let hospital_address = document.getElementById("hospital_address").value
-        let pincode = document.getElementById("pincode").value
-        let tel_num = document.getElementById("tel_num").value
-        let blood_group_avail = document.querySelectorAll(".blood_group_avail")
-        let blood_stock_avail = document.querySelectorAll(".blood_stock_avail")
-        let hosp_license = document.getElementById("hosp_license").value
-        let hospital_renew = document.getElementById("hospital_renew").value
-        let add_image_button =document.getElementById("add_image_button")
-        let changed_photo= document.getElementById("changed_photo")
-        
-            
-        let total_blood_avail = []
+if(password==con_password){
+  const total_blood_avail = []
         for(let i = 0;i<blood_group_avail.length;i++){
-            let blood_avail ={
-            "blood_group_avail":blood_group_avail[i].value,
-            "blood_stock_avail":blood_stock_avail[i].value
-        }
+            const blood_avail ={
+    "blood_group_avail":blood_group_avail[i].value,
+    "blood_stock_avail":blood_stock_avail[i].value
+}
         total_blood_avail.push(blood_avail)
         }
 
-        let hospital_detail = localStorage.getItem("hospital_detail")? JSON.parse(localStorage.getItem("hospital_detail")): [] //localStorage.getItem("hospital_detail")? JSON.parse(localStorage.getItem("hospital_detail")):
-        
+        const hospital_detail =  JSON.parse(localStorage.getItem("hospital_details"))?? [] //localStorage.getItem("hospital_detail")? JSON.parse(localStorage.getItem("hospital_detail")):
 
-
-        // let hospital_image = document.querySelector("#add_img");
-    //     add_image_button.addEventListener("click", function () {
-    //     let change_photo = this.files[0];
-    //     if (change_photo) {
-    //         const reader = new FileReader();
-    //         reader.addEventListener("load", function () {
-    //           change_photo.setAttribute("src", reader.result);
-    //             let temp = JSON.parse(localStorage.getItem("temp"))??[]
-    //             temp.forEach(element => {
-    //             });
-    //             console.log(reader.result);
-    //             temp[0]["image"] = image.getAttribute("src")
-    //             localStorage.setItem("temp", JSON.stringify(temp))
-    //         })
-    //         reader.readAsDataURL(change_photo);
-    //     }
-    // })
-    // let temp= JSON.parse(localStorage.getItem("temp"))
-    //     let new_src= temp[0]["image"]
-    //     image.setAttribute("src",new_src)
-
-
-        let hospital_data = {
-            "hospital_name":hospital_name,
-            "district":district,
-            "hospital_address":hospital_address,
-            "pincode":pincode,
-            "tel_num":tel_num,
-            "total_blood_avail":total_blood_avail,
-            "hosp_license":hosp_license,
-            "hospital_renew":hospital_renew,
-        }
+        const hospital_data = {
+    hospital_name,
+    district,
+    hospital_address,
+    pincode,
+    tel_num,
+    total_blood_avail,
+    hosp_license,
+    hospital_renew,
+    hospitaltype,
+    gmail,
+    password
+}
+        // localStorage.setItem("active_hospital",gmail)
         hospital_detail.push(hospital_data)
-        localStorage.setItem("hospital_detail",JSON.stringify(hospital_detail))
+        localStorage.setItem("hospital_details",JSON.stringify(hospital_detail))
+        // localStorage.setItem("status","hospital")
 
+          window.location.href="./new_login.html"
 
-        })
-
-    </script>
+        }
+      else{
+        alert("password and confirm password doesn't match")
+      }})
+//try
+            </script>
   </body>
 </html>

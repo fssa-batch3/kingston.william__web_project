@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> DONOR </title>
+        <link rel="stylesheet" href="../assets/css/registration.css">
+        <title>Registration Form</title>
+    </head>
+    <body>
+        <div class="container">
+
+            <header>Donor Registration</header>
+     <!-- <form> -->
+        <form id="signup-form">
+        <div class="form first">
+            <div class="details personal">
+             
+            <div class="fields">
+                <div class="input-field">
+                    <label>Full Name</label>
+                    <input type="text"id="fullname" pattern="[A-Za-z]{2,32}" placeholder="Enter your name" required="true">
+                </div>
+
+                <div class="input-field">
+                    <label>Date of Birth</label>
+                    <input type="date" placeholder="Enter Birth date" required id="dob">
+                </div>
+
+                <div class="input-field">
+                    <label>Email</label>
+                    <input type="email"id="emailid" placeholder="Enter your email" required>
+                </div>
+                
+                    <div class="input-field">
+                        <label>Mobile Number</label>
+                        <input type="tel"id="phnum" title="Enter only numbers" pattern="[0-9]{10}" placeholder="Enter mobile number" required>
+                    </div>
+                          
+                    <div class="input-field">
+                        <label>Gender</label>
+                        <select id ="gendermf">
+                            <option>Select</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                     </div>
+                    <!-- <div class="input-field">
+                        <label>Gender</label>
+                        <input type="text" pattern="[A-Za-z]{2,32}" id="gendermf" placeholder="Enter your gender" required>
+                    </div> -->
+
+                    <div class="yesorno">
+                        <p>Did you ever donate blood before?</p>
+                        
+                        <label for="donated_before" class="label1">
+                            <input type="radio" name="donated_before" id="donated_before">
+                            Yes
+                        </label>
+                       
+                        <label for="donated_before_no" class="label1">
+                            <input type="radio" name="donated_before" id="donated_before_no">
+                           No
+                        </label>
+                     </div>
+
+                    <div class="input-field">
+                        <label>Occupation</label>
+                        <input type="text"id="occup" pattern="[A-Za-z]{2,32}" placeholder="Enter your occupation" required>
+                    </div>
+            </div>
+            </div>
+             <!--same div -->
+            <div class="details ID">
+             
+             <div class="fields">
+                 <div class="input-field">
+                     <label>Address </label>
+                     <input type="text" id="add" placeholder="Enter your Address" required>
+                 </div>
+ 
+                 <div class="input-field">
+                     <label>Age</label>
+                     <input type="number" pattern="[0-9]{2}" id="age" placeholder="Enter your age" required>
+                 </div>
+ 
+                 <div class="input-field">
+                    <label>State</label>
+                    <select id ="state">
+                        <option >Select</option>
+                        <option >Tamil Nadu</option>
+                    </select>
+                 </div>
+                     <!-- <label>State</label>
+                     <input type="text"  pattern="[A-Za-z]{2,32}" placeholder="State" id="state" required>
+                 </div> -->
+                 
+                     <div class="input-field">
+                        <label>District</label>
+                        <select id ="dist">
+                            <option >Select</option>
+                            <option >Ariyalur</option>
+                            <option >Chennai</option>
+                            <option >Coimbatore</option>
+                            <option >Chengalpattu</option>
+                            <option >Cuddalore</option>
+                            <option >Dharmapuri</option>
+                            <option >Dindigul</option>
+                            <option >Erode</option>
+                            <option >Kallakurichi</option>
+                            <option >Kancheepuram</option>
+                            <option >Karur</option>
+                            <option >Krishnagiri</option>
+                            <option >Madurai</option>
+                            <option >Mayiladuthurai</option>
+                            <option >Nagapattinam</option>
+                            <option >Nagercoil</option>
+                            <option >Namakkal</option>
+                            <option >Perambalur</option>
+                            <option >Pudukkottai</option>
+                            <option >Ramanathapuram</option>
+                            <option >Ranipet</option>
+                            <option >Salem</option>
+                            <option >Sivagangai</option>
+                            <option >Tenkasi</option>
+                            <option >Thanjavur</option>
+                            <option >Theni</option>
+                            <option >Thiruvallur</option>
+                            <option >Thiruvarur</option>
+                            <option >Thoothukudi</option>
+                            <option >Trichirappalli</option>
+                            <option >Thirunelveli</option>
+                            <option >Tirupathur</option>
+                            <option >Tiruppur</option>
+                            <option >Tiruvannamalai</option>
+                            <option >The Nilgiris</option>
+                            <option >Vellore</option>
+                            <option >Viluppuram</option>
+                            <option >Virudhunagar</option>
+                        </select>
+                     </div>
+ 
+                     <div class="input-field">
+                        <label>Blood Group</label>
+                        <select id ="blood">
+                            <option>Select Blood Group</option>
+                            <option>AB-ve</option>
+                            <option>AB+ve</option>
+                            <option>A-ve</option>
+                            <option>A+ve</option>
+                            <option>A1+ve</option>
+                            <option>B-ve</option>
+                            <option>B+ve</option>
+                            <option>O-ve</option>
+                            <option>O+ve</option>
+                            <option>All Blood Groups</option>
+                        </select>
+                         <!-- <label>Blood Group</label>
+                         <input type="text" id="blood" placeholder="Enter your blood group" required> -->
+                     </div>
+
+                     <div class="yesorno">
+                        <p>Do you suffer any Diseases / Allergies before?</p>
+                        
+                        <label for="op1" class="label1">
+                            <input type="radio" name="radio" id="diseased_before">
+                            Yes
+                        </label>
+                        
+                        <label for="op1" class="label1">
+                            <input type="radio" name="radio" id="diseased_before_no">
+                            No
+                        </label>
+                     </div>
+ 
+                     <div class="input-field">
+                         <label>Disease/Allergies Name (or) None</label>
+                         <input type="text" placeholder="Enter Disease name" required id="disease_name">
+                         
+                     </div>
+             </div>
+            
+             <div class="password">
+                <div class="input-field">
+                    <label>Enter password</label>
+                    <input type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter password.." required id="password">
+                </div>
+                <div class="input-field">
+                    <label>Confirm password</label>
+                    <input type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter password.." required id="cpassword">
+                </div>
+             </div>
+
+             <div class="buttons">   
+                          <a href="../index.html" id="back_button">Back</a>
+             <button type="submit" class="submitbtn">
+                Submit
+             </button>
+            </div>
+             
+            </form>
+             </div>
+        </div>
+
+        </div>
+        
+    </body>
+    <script>
+        const form =  document.querySelector("form")
+        form.addEventListener("submit",submit)
+        function submit(e) {
+            e.preventDefault()
+          const dob = document.getElementById("dob").value
+          console.log(dob);
+          // 2005/05/25
+          const dob_year = 2023 - dob.slice(0,4)//2005
+            console.log(dob_year)  // 18
+
+          const age = document.getElementById("age").value;
+
+          
+          if(age==dob_year||age==(dob_year-1)){
+            if(age>17&& age<60){
+          const fullname = document.getElementById("fullname").value.trim();
+          const emailid = document.getElementById("emailid").value.trim();
+          const phnum = document.getElementById("phnum").value.trim();
+          const gendermf = document.getElementById("gendermf").value.trim();
+          let donated_before = document.getElementById("donated_before")
+
+          if (donated_before.checked) {
+            donated_before= "yes"
+          }
+          else{
+            donated_before="no"
+          }
+          const occupation= document.getElementById("occup").value.trim();
+          const address= document.getElementById("add").value.trim();
+          const state=document.getElementById("state").value.trim();
+          const district = document.getElementById("dist").value.trim();
+          const bloodgroup = document.getElementById("blood").value.trim();
+
+          let diseased_before = document.getElementById("diseased_before")
+          if (diseased_before.checked) {
+            diseased_before= "yes"
+          }
+          else{
+            diseased_before="no"
+          }
+          const disease_name =document.getElementById("disease_name").value.trim()
+
+          const password =document.getElementById("password").value.trim()
+          const cpassword =document.getElementById("cpassword").value.trim()
+
+          if (password==cpassword) {
+            const donor_details = JSON.parse(localStorage.getItem("donor_details"))?? []
+            const donor_detail ={
+        fullname,
+        dob,
+        emailid,
+        phnum,
+        gendermf,
+        donated_before,
+        occupation,
+        address,
+        age,
+        state,
+        district,
+        bloodgroup,
+        diseased_before,
+        disease_name,
+        password,
+        status:true
+    }
+            donor_details.push(donor_detail)
+            localStorage.setItem("donor_details",JSON.stringify(donor_details))
+            // localStorage.setItem("status","donor")
+              window.location.href = "./new_login.html";
+
+          }
+          else{
+            alert("password and confirm password doesn't match")
+          }
+}
+else{
+alert("Your Age should be between 18 and 60")
+}
+     
+          }
+          else{
+alert("The Date of Birth and Age is Irrelavant")
+          }
+    
+        }
+      </script>
+</html>

@@ -1,0 +1,57 @@
+.container1{
+    align-items: center;
+    background-color: #dee4f0;
+    justify-content: space-around;
+}
+.container1_left img{
+width: 500px;
+}
+.container1_right{
+    width: 50%;
+}
+ul {
+	list-style: none;
+	padding: 0;
+}
+li {
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+}
+h2 {
+	margin-top: 0;
+}
+.name {
+	font-weight: bold;
+}
+.email {
+	color: #666;
+}
+.online_round{
+   /* border: 1px solid orange; */
+   height: 20px;
+   width: 20px;
+   border-radius: 50%;
+    
+  }
+  .green{
+	background-color: greenyellow ;
+  }
+  .red{
+    background-color: red !important;
+  }
+  .active_status{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  .active{
+    display: flex;
+    padding:10px 40px;
+    width: 100px;
+    /* justify-content: center; */
+  }
+  .active div{
+    margin-right: 10px;
+  }
+
+  

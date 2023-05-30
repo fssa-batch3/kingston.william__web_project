@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DONOR</title>
     <link rel="stylesheet" href="../assets/css/blood_availability.css">
     <link rel="stylesheet" href="../assets/css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+    <script src="../assets/js/main.js"></script>
+    <link rel="stylesheet" href="../assets/css/common.css">
   </head>
   <body>
      <!--navbar-->
      <header>
      <nav>
-        <div class="nav1"><img src="../assets/img/Donor_logo.png" alt="logo" />
+        <div class="nav1">
+<img src="../assets/img/Donor_logo.png" alt="logo">
         <ul class="nav-links">
-          <li class="active"><a href="../index.html">Home</a></li>
-          <li><a href="#">Blood Availability</a></li>
-          <li><a href="donor_availability.html">Donor Availability</a></li>
-          <li><a href="pages/registration.html">Register</a></li>
-          <li><a href="pages/profile.html">Profile</a></li>
+          <li class="active">
+<a href="../index.html">Home</a>
+</li>
+          <li>
+<a href="blood_availability.html">Blood Availability</a>
+</li>
+          <li>
+<a href="donor_availability.html">Donor Availability</a>
+</li>
+          <li id="register">
+<a href="donor_registration.html">Register</a>
+</li>
+          <li>
+<a id="profile_page">Profile</a>
+</li>
       </div>
         <div class="login_signup">
           <button>Signup</button>
@@ -43,45 +55,68 @@
       <h1>BLOOD AVAILABLE HOSPITALS</h1>
   </div>
       <form>
-          
+          <h3>Sort by</h3>
           <select id ="state">
-              <option value="state">Select State</option>
               <option value="state">TAMIL NADU</option>
-              <option value="state">KERALA</option>
-              <option value="state">DELHI</option>
-              <option value="state">GOA</option>
-              <option value="state">HARYANA</option>
-              <option value="state">BIHAR</option>
-              <option value="state">PUDUCHERRY</option>
           </select>
           
-          <select id ="state">
-              <option value="district">Select District</option>
-              <option value="district">CHENNAI</option>
-              <option value="district">COIMBATORE</option>
-              <option value="district">ARIYALUR</option>
-              <option value="district">GOA</option>
-              <option value="district">MADURAI</option>
-              <option value="district">THANJAVUR</option>
-              <option value="district">TIRUNELVELI</option>
+          <select id ="district">
+              <option >Select District</option>
+              <option >Ariyalur</option>
+              <option >Chennai</option>
+              <option >Coimbatore</option>
+              <option >Chengalpattu</option>
+              <option >Cuddalore</option>
+              <option >Dharmapuri</option>
+              <option >Dindigul</option>
+              <option >Erode</option>
+              <option >Kallakurichi</option>
+              <option >Kancheepuram</option>
+              <option >Karur</option>
+              <option >Krishnagiri</option>
+              <option >Madurai</option>
+              <option >Mayiladuthurai</option>
+              <option >Nagapattinam</option>
+              <option >Nagercoil</option>
+              <option >Namakkal</option>
+              <option >Perambalur</option>
+              <option >Pudukkottai</option>
+              <option >Ramanathapuram</option>
+              <option >Ranipet</option>
+              <option >Salem</option>
+              <option >Sivagangai</option>
+              <option >Tenkasi</option>
+              <option >Thanjavur</option>
+              <option >Theni</option>
+              <option >Thiruvallur</option>
+              <option >Thiruvarur</option>
+              <option >Thoothukudi</option>
+              <option >Trichirappalli</option>
+              <option >Thirunelveli</option>
+              <option >Tirupathur</option>
+              <option >Tiruppur</option>
+              <option >Tiruvannamalai</option>
+              <option >The Nilgiris</option>
+              <option >Vellore</option>
+              <option >Viluppuram</option>
+              <option >Virudhunagar</option>
           </select>
        
-          <select id ="state">
-              <option value="district">Select Blood Group</option>
-              <option value="district">AB-ve</option>
-              <option value="district">AB+ve</option>
-              <option value="district">A-ve</option>
-              <option value="district">B-ve</option>
-              <option value="district">B+ve</option>
-              <option value="district">Oh-VE</option>
-              <option value="district">Oh+VE</option>
-              <option value="district">O-Ve</option>
-              <option value="district">O+Ve</option>
-              <option value="district">All Blood Groups</option>
+          <select id="select_blood_group">
+              <option >Select Blood Group</option>
+              <option >AB-ve</option>
+              <option >AB+ve</option>
+              <option>A-ve</option>
+              <option>A+ve</option>
+              <option >A+ve</option>
+              <option >B-ve</option>
+              <option >B+ve</option>
+              <option >O-ve</option>
+              <option >O+ve</option>
+              <option >All Blood Groups</option>
           </select>
-         
           
-          <select id ="state">
+          <!-- <select id ="state">
               <option value="district">Components of Blood</option>
               <option value="district">single donor platelet</option>
               <option value="district">single donor plasma</option>
@@ -93,116 +128,98 @@
               <option value="district">packed red blood cells</option>
               <option value="district">Leukoreduced Rbc</option>
               <option value="district">fresh frozen plasma</option>
-          </select>
+          </select> -->
       </form>
-      <a href="list.html">Submit</a>
+      <a id="submit">Submit</a>
   </div>
 </div>
-</div>
- <!--blood availability-->
- <!-- <div class="listing">
-  <div class="list_one">
-  <div class="list">
-      <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
-      <h3>1.TTD Central Hospital Blood Bank</h3>
-  </div>
-  <p><span> District:</span> Chittoor,
-  <p><span>State :</span>Andhra pradesh</p>
-  <p><span> City:</span> Tirupati address: Tirumala Tirupati Devastanam (TTD),Kapil Teertham Road, Tirupati</p>
-  <p><span> Pincode:</span>517501
-  <p><span> Phone no:</span></p>
-  <p><span>Gmail:</span> ttdcentralhospital@gmail.com;</p>
-  <p><span>Blood Component Available:</span>No Service Time:24*7 </p>
-  <p><span>License:</span>85/Ch/AP/BB/1997/R Date license</p>
-  <p><span>Obtained:</span>07.07.1997</p>
 </div>
 
-<div class="list_one">
-  <div class="list">
-      <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
-      <h3>2.TTD Central Hospital Blood Bank</h3>
-  </div>
-  <p><span> District:</span> Chittoor,
-  <p><span>State :</span>Andhra pradesh</p>
-  <p><span> City:</span> Tirupati address: Tirumala Tirupati Devastanam (TTD),Kapil Teertham Road, Tirupati</p>
-  <p><span> Pincode:</span>517501
-  <p><span> Phone no:</span></p>
-  <p><span>Gmail:</span> ttdcentralhospital@gmail.com;</p>
-  <p><span>Blood Component Available:</span>No Service Time:24*7 </p>
-  <p><span>License:</span>85/Ch/AP/BB/1997/R Date license</p>
-  <p><span>Obtained:</span>07.07.1997</p>
-</div>
-
-<div class="list_one">
-  <div class="list">
-      <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
-      <h3>3.TTD Central Hospital Blood Bank</h3>
-  </div>
-  <p><span> District:</span> Chittoor,
-  <p><span>State :</span>Andhra pradesh</p>
-  <p><span> City:</span> Tirupati address: Tirumala Tirupati Devastanam (TTD),Kapil Teertham Road, Tirupati</p>
-  <p><span> Pincode:</span>517501
-  <p><span> Phone no:</span></p>
-  <p><span>Gmail:</span> ttdcentralhospital@gmail.com;</p>
-  <p><span>Blood Component Available:</span>No Service Time:24*7 </p>
-  <p><span>License:</span>85/Ch/AP/BB/1997/R Date license</p>
-  <p><span>Obtained:</span>07.07.1997</p>
-</div>
-
-<div class="list_one">
-  <div class="list">
-      <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
-      <h3>4.TTD Central Hospital Blood Bank</h3>
-  </div>
-  <p><span> District:</span> Chittoor,
-  <p><span>State :</span>Andhra pradesh</p>
-  <p><span> City:</span> Tirupati address: Tirumala Tirupati Devastanam (TTD),Kapil Teertham Road, Tirupati</p>
-  <p><span> Pincode:</span>517501
-  <p><span> Phone no:</span></p>
-  <p><span>Gmail:</span> ttdcentralhospital@gmail.com;</p>
-  <p><span>Blood Component Available:</span>No Service Time:24*7 </p>
-  <p><span>License:</span>85/Ch/AP/BB/1997/R Date license</p>
-  <p><span>Obtained:</span>07.07.1997</p>
-</div>
-
-<div class="list_one">
-  <div class="list">
-      <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
-      <h3>5.TTD Central Hospital Blood Bank</h3>
-  </div>
-  <p><span> District:</span> Chittoor,
-  <p><span>State :</span>Andhra pradesh</p>
-  <p><span> City:</span> Tirupati address: Tirumala Tirupati Devastanam (TTD),Kapil Teertham Road, Tirupati</p>
-  <p><span> Pincode:</span>517501
-  <p><span> Phone no:</span></p>
-  <p><span>Gmail:</span> ttdcentralhospital@gmail.com;</p>
-  <p><span>Blood Component Available:</span>No Service Time:24*7 </p>
-  <p><span>License:</span>85/Ch/AP/BB/1997/R Date license</p>
-  <p><span>Obtained:</span>07.07.1997</p>
-</div>
-
-</div> -->
 <div class="main_cont">
-    <!-- <div class="cont_content">
-      <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
-      <p><span>CHENNAI HOSPITAL</span></p>
-      <p>Hospital Name: Gem</p>
-    </div> -->
+  <!-- <a href="./hospital_details.html?name=KING" class="cont_content">
+    <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
+    <p><span>KIng hospital</span></p>
+    <p>madurai</p>
+  </a> -->
 </div>
   </body>
+<script src="../assets/js/common.js"></script>
+
   <script>
-    let hospital_detail=JSON.parse(localStorage.getItem("hospital_detail"))
-    let main_cont =document.querySelector(".main_cont")
+    const hospital_detail=JSON.parse(localStorage.getItem("hospital_details"))
+    const main_cont =document.querySelector(".main_cont")
 
-
+const district=[]
     for (let i = 0; i < hospital_detail.length; i++) {
-      main_cont.innerHTML+=`
-       <a href="./hospital_details.html?name=${hospital_detail[i]["hospital_name"]}" class="cont_content">
+      main_cont.innerHTML +=` 
+       <a href="./hospital_details.html?name=${hospital_detail[i].hospital_name}" class="cont_content">
       <img src="../assets/img/hospital_img.jpg" alt="hospital img" />
-      <p><span>${hospital_detail[i]["hospital_name"]}</span></p>
-      <p>${hospital_detail[i]["hospital_address"]} ${hospital_detail[i]["district"]}</p>
+      <p><span>${hospital_detail[i].hospital_name}</span></p>
+      <p>${hospital_detail[i].hospital_address} ${hospital_detail[i].district}</p>
+    </a>
+      `
+      district.push(hospital_detail[i].district)
+
+      console.log(hospital_detail[i].district);
+
+      // `dscnjjczjz ${jnwcnc}`
+    }
+    console.log(district);
+
+    // const place=document.getElementById("state")
+    // const option=document.getElementsByTagName("option")
+    // let selectedValue;
+    // let selvalue;
+    // place.addEventListener("change", (event) => {
+    //     check = event.target.innerText
+    //     selectedValue = event.target.value;
+    //     console.log(selectedValue);
+    //     selvalue= selectedValue
+    // //    return selvalue
+    // const dic = document.querySelectorAll(".cont_content");
+    // dic.forEach(ex => {
+    //     const child = ex.children[2].textContent.toLowerCase();
+    //     console.log(`${child }iam`);
+        
+    //     if (child===selvalue) {
+    //       ex.style.display = "block"
+    //       // console.log("isac");
+    //     }
+    //     else {
+    //       ex.style.display = "none"
+    //       // console.log("deva");
+    //     }
+    //   })
+    // });
+    const status= localStorage.getItem("status")
+  const login_signup =document.querySelector(".login_signup")
+  const register = document.querySelector("#register")
+  if(status){
+    register.classList.add("not_view")
+    login_signup.classList.add("not_view")
+  }
+
+// filtering the districts-----------------
+
+// console.log(select_blood_group,"uyt");
+
+const submit = document.getElementById("submit")
+submit.addEventListener("click",e=>{
+  const district_value = document.getElementById("district").value
+const select_blood_group = document.getElementById("select_blood_group").value
+main_cont.innerHTML=""
+  for (let i = 0; i < hospital_detail.length; i++) {
+    if(hospital_detail[i].district==district_value && (select_blood_group==hospital_detail[i].total_blood_avail[0].blood_group_avail || select_blood_group==hospital_detail[i].total_blood_avail[1].blood_group_avail||select_blood_group==hospital_detail[i].total_blood_avail[2].blood_group_avail) ){
+      main_cont.innerHTML+=` 
+       <a href="./hospital_details.html?name=${hospital_detail[i].hospital_name}" class="cont_content">
+      <img src="../assets/img/hospital_img.jpg" alt="hospital img"/>
+      <p><span>${hospital_detail[i].hospital_name}</span></p>
+      <p>${hospital_detail[i].hospital_address} ${hospital_detail[i].district}</p>
     </a>
       `
     }
+    }
+    
+})
   </script>
   </html>

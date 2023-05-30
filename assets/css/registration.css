@@ -43,7 +43,7 @@ body{
 .container .form{
     position: relative;
     margin-top: 16px;
-    min-height: 490px;
+    min-height: 510px;
     background-color: #fff;
 }
 .container .form .details{
@@ -96,12 +96,24 @@ body{
 .input-field input[type="date"]:valid{
     color: #707070;
 } 
+.password{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.password input{
+    margin-right: 20px;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+}
 .container .form button{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 45px;
-    max-width: 200px;
+    max-width: 100px;
     width: 100%;
     border:none;
     outline: none;
@@ -116,5 +128,37 @@ body{
     background-color: #265df2;
 
 }
+#back_button{
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    /* height: 40px; */
+    max-width: 200px;
+    color: #265df2;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin: 0px 20px;
+    font-size: 14px;
 
+}
+#dist{
+    height: 41px;
+    width:170px;
+    border-radius: 5px;
+}
+#state{
+    height: 41px;
+    width:200px;
+    border-radius: 5px;
+    /* margin-top: 19px; */
+}
+#blood{
+    height: 41px;
+    width:200px;
+    border-radius: 5px;
+}
+#gendermf{
+    height: 41px;
+    width:200px;
+    border-radius: 5px;
+}
 

@@ -111,7 +111,7 @@ main{
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     width: 300px;
     height: 300px;
-    margin: 50px 40px;
+    margin: 50px 90px;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -386,7 +386,7 @@ float: right;
         height: 700px;
     }
 
-    footer {
+    /* footer {
         background-color: grey;
         height: 250px;
         text-align: center;
@@ -431,5 +431,59 @@ float: right;
         margin-top: 20px;
         width: 80px;
       }
-      
-
+     */
+     /* footer */
+     footer{
+        text-align: center;
+        /* margin-top: 50px; */
+        background-color: rgb(40, 39, 39);
+        color:white;
+        padding: 30px;
+        font-family:sans-serif;
+    }
+    footer h2{
+        display: flex;
+    } 
+    footer img{
+        width: 80px;
+    }
+    footer >p{
+        margin:30px;            
+    }
+    
+    .footericons{
+        display: flex;
+        justify-content: center;
+    }
+    .footericons img{
+        width:30px;
+        margin: 0px 20px 30px 20px;
+        cursor: pointer;
+    }
+    .footerlast{
+        display: flex;
+        justify-content: space-between;
+    }
+    .footerlast p:hover{
+        letter-spacing: 0.5px;
+        transition: .4s;
+        cursor: pointer;
+        border: white solid;
+        border-width: 0px 0px 2px 0px;
+    }
+    .footernav{
+        display: flex;
+    }
+    .footernav a{
+        text-decoration: none;
+        margin-left: 20px;
+        color: white;
+        padding-bottom: 4px;
+    }
+    .footernav a:hover{
+        font-size: 17px;
+        border: solid white;
+        border-width: 0px 0px 2px 0px;
+        transition: .4s;
+    }
+    
